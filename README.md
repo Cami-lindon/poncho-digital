@@ -1,5 +1,16 @@
 # poncho-digital
 Trabajo De Laboratorio de Programacion III
 
+Integrantes:
 Camila Micaela Lindon MU:01907
 Ramiro Exequiel Seco  MU:01797
+
+Docentes:
+Mgtr. Cecilia E. Gallardo
+Esp. Marta del V. Miranda
+
+Carrera: Ingeniería en Informática
+
+Asignatura: Programación III
+
+AÑO : 2026

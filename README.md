@@ -1,6 +1,4 @@
 # poncho-digital
-Trabajo De Laboratorio de Programacion III
-
 Integrantes:
 Camila Micaela Lindon MU:01907
 Ramiro Exequiel Seco  MU:01797

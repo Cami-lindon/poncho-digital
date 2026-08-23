@@ -8,7 +8,7 @@
 
     <body>
         <header>
-            <h1>Mis productos</h1>
+            <h1>Gestión de mis productos</h1>
         </header>
 
         <section>
@@ -26,6 +26,70 @@
 
         <section>
             <h2 id="sección-agregar">Agregar productos</h2>
+
+            <form><strong>Información sobre el producto</strong></form>
+            <fieldset>
+                <legend>Datos del producto</legend>
+
+                <label>Nombre del producto</label><br>
+                <input type="text" name="nombre" size="50" maxlength="250"><br>
+
+                <br>
+
+                <label>Categoria</label><br>
+                <select value="" required name="Categoria">
+                    <option value="" selected disabled></option>
+                    <option>Indumentaria y Calzado</option>
+                    <option>Accesorios y Joyería</option>
+                    <option>Hogar, Cocina y Decoración</option>
+                    <option>Mates y Marroquinería</option>
+                    <option>Arte y Colección</option>
+                    <option>Otra(Especificar)</option>
+                </select> <br>
+
+                <br>
+
+                <label>Rubro/Material o Técnica</label><br>
+                <select required name="Rubro o Técnica">
+                    <option value="" selected disabled></option>
+                    <option>Textil (Vicuña, Llama, Oveja)</option>
+                    <option>Piedra / Rodocrosita</option>
+                    <option>Cerámica / Arcilla</option>
+                    <option>Cestería / Fibras Vegetales (Símbol)</option>
+                    <option>Madera y Caña</option>
+                    <option>Metal / Orfebrería (Alpaca, Plata)</option>
+                    <option>Cuero</option>
+                    <option>Asta y Hueso</option>
+                    <option>Otra(Especificar)</option>
+                </select> <br>
+
+                <br>
+
+                <label>Descripción</label><br>
+                <textarea name="Descripción" cols="40" rows="5" maxlength="250"></textarea><br>
+
+                <br>
+
+                <label>Precio (ARS)</label>
+                <input type="number" min="1" ><br>
+
+                <br>
+
+                <label>Cantidad en stock</label>
+                <input type="number" min="1"><br>
+
+                <br>
+
+                <label>Peso aproximado (Kg)</label>
+                <input type="number" min="0.01" step="0.01"><br>
+
+                <br>
+
+                <label>Dimensiones</label>
+                <input type="text" placeholder="Ej:20cm x 15 cm x 10 cm">
+                
+            </fieldset>
+
 
         </section>
 

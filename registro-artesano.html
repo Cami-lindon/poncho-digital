@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitud de Participación - Poncho Digital</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Poncho Digital</h1>
+
+        <nav>
+            <a href="portada.html">Inicio</a>
+            <a href="registro-artesano.html">Registro artesano</a>
+            <a href="Productos.html">Productos</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <h2>Solicitud de Artesano</h2>
+
+        <form>
+
+            <fieldset>
+                <legend>Datos Personales</legend>
+
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+
+                <div>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido">
+                </div>
+
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div>
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" name="telefono" id="telefono">
+                </div>
+
+                <div>
+                    <label for="localidad">Localidad</label>
+                    <input type="text" name="localidad" id="localidad">
+                </div>
+
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Datos del Emprendimiento</legend>
+
+                <div>
+                    <label for="emprendimiento">
+                        Nombre del emprendimiento:
+                    </label>
+
+                    <input type="text" name="emprendimiento" id="emprendimiento">
+                </div>
+
+                <div>
+                    <label for="rubro">Rubro:</label>
+
+                    <select name="rubro" id="rubro">
+                        <option value="">Seleccione un rubro</option>
+                        <option value="artesania">Artesania</option>
+                        <option value="textil">Textil</option>
+                        <option value="gastronomia">Gastronomia</option>
+                        <option value="bebidas">Bebidas</option>
+                        <option value="regionales">Productos regionales</option>
+                        <option value="decoracion">Decoracion</option>
+                        <option value="joyeria">Joyeria</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="descripcion">
+                        Descripcion breve del emprendimiento:
+                    </label>
+
+                    <textarea name="descripcion" id="descripcion"></textarea>
+                </div>
+
+                <div>
+                    <label for="productos">
+                        ¿Qué productos comercializa?
+                    </label>
+
+                    <textarea id="productos" name="productos"></textarea>
+                </div>
+
+                <div>
+                    <label for="variedad">
+                        Tipo o variedad de productos
+                    </label>
+
+                    <input type="text" id="variedad" name="variedad">
+                </div>
+
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Solicitud</legend>
+
+                <div>
+                    <label for="observaciones">
+                        Observaciones adicionales
+                    </label>
+
+                    <textarea id="observaciones" name="observaciones"></textarea>
+                </div>
+
+            </fieldset>
+
+
+            <button type="submit">Enviar Solicitud</button>
+
+        </form>
+
+    </main>
+
+
+    <footer>
+        <p>
+            Poncho Digital / Fiesta Nacional e internacional del poncho
+        </p>
+    </footer>
+
+</body>
+
+</html>

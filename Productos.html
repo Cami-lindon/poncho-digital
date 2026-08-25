@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Panel de Artesano</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Gestión de mis productos</h1>
+        </header>
+
+        <section>
+
+            <h2>Menú</h2>
+            <nav>
+                <ul>
+                    <li><a href="#sección-agregar">Agregar productos</a></li>
+                    <li><a href="#sección-modificar">Modificar productos</a></li>
+                    <li><a href="#sección-eliminar">Eliminar productos</a><br></li>
+                </ul>
+            </nav>
+
+        </section>
+
+        <section>
+            <form>
+            <h2 id="sección-agregar">Agregar productos</h2>
+
+            <label><strong>Información sobre el producto</strong></label>
+            <fieldset>
+                <legend>Datos del producto</legend>
+
+                <label>Nombre del producto</label><br>
+                <input type="text" name="nombre" size="50" maxlength="250"><br>
+
+                <br>
+
+                <label>Categoria</label><br>
+                <select required name="Categoria">
+                    <option value="" selected disabled>---Seleccione una categoría---</option>
+                    <option>Indumentaria y Calzado</option>
+                    <option>Accesorios y Joyería</option>
+                    <option>Hogar, Cocina y Decoración</option>
+                    <option>Mates y Marroquinería</option>
+                    <option>Arte y Colección</option>
+                    <option>Otra(Especificar)</option>
+                </select> <br>
+
+                <br>
+
+                <label>Rubro/Material o Técnica</label><br>
+                <select required name="Rubro o Técnica">
+                    <option value="" selected disabled>---Seleccione un Rubro/Material/Técnica---</option>
+                    <option>Textil (Vicuña, Llama, Oveja)</option>
+                    <option>Piedra / Rodocrosita</option>
+                    <option>Cerámica / Arcilla</option>
+                    <option>Cestería / Fibras Vegetales (Símbol)</option>
+                    <option>Madera y Caña</option>
+                    <option>Metal / Orfebrería (Alpaca, Plata)</option>
+                    <option>Cuero</option>
+                    <option>Asta y Hueso</option>
+                    <option>Otra(Especificar)</option>
+                </select> <br>
+
+                <br>
+
+                <label>Descripción</label><br>
+                <textarea name="Descripción" cols="40" rows="5" maxlength="250"></textarea><br>
+
+                <br>
+
+                <label>Precio (ARS)</label>
+                <input type="number" min="1" ><br>
+
+                <br>
+
+                <label>Cantidad en stock</label>
+                <input type="number" min="1"><br>
+
+                <br>
+
+                <label>Peso aproximado (Kg)</label>
+                <input type="number" min="0.01" step="0.01"><br>
+
+                <br>
+
+                <label>Dimensiones</label>
+                <input type="text" placeholder="Ej:20cm x 15 cm x 10 cm">
+                
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Imágenes del producto</legend>
+
+                <label>Imagen del producto:</label>
+                <input type="file">
+                <br>
+
+                <label>Imagenes adicionales (hasta 4):</label>
+                <br>
+                <input type="file">
+                <br>
+                <input type="file">
+                <br>
+                <input type="file">
+                <br>
+                <input type="file">
+            </fieldset>
+
+                <input type="submit" value="Publicar producto"> <input type="reset" value="Limpiar Formulario">
+
+            </form>
+        </section>
+        <br>
+        <hr>
+            <section>
+                <h2>Mis productos publicados</h2>
+
+                <fieldset>
+                    <table>
+                        <tr>
+
+                        <th>ID</th>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Categoria</th>
+                        <th>Rubro/Material o Técnica</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Imagen</td>
+                            <td>Botas de Cuero</td>
+                            <td>Indumentaria y Calzado</td>
+                            <td>Cuero</td>
+                            <td>50.000</td>
+                            <td>2</td>
+                            <td>01/08/2026</td>
+                            <td><a href="#sección-modificar">Modificar</a> <input type="button" value="Eliminar"></td>
+                        </tr>
+
+                    </table>
+
+
+                </fieldset>
+
+            </section>
+
+
+        <br>
+        <hr>
+
+        <section>
+            <h2 id="sección-modificar">Modificar productos </h2>
+            <h3>Editando: PROD-2026-023 Jarrón de ceramica artesanal </h3>
+
+            <fieldset>
+                <legend>Información del producto</legend>
+
+                <label><strong>ID</strong>: PROD-2026-023</label><br>
+                <label><strong>Fecha de publicación</strong>: 01/08/26</label>
+            </fieldset>
+            <form>
+            <fieldset>
+                <legend>Datos del producto</legend>
+
+                <label>Nombre del producto</label><br>
+                <input type="text" name="nombre" value="Jarron de ceramica artesanal" size="50" maxlength="250"><br>
+
+                <br>
+
+                <label>Categoria</label><br>
+                <select required name="Categoria">
+                    <option value="" disabled>---Seleccione una categoría---</option>
+                    <option value="" selected>Hogar, Cocina y Decoración</option>
+                    <option>Indumentaria y Calzado</option>
+                    <option>Accesorios y Joyería</option>
+                    <option>Hogar, Cocina y Decoración</option>
+                    <option>Mates y Marroquinería</option>
+                    <option>Arte y Colección</option>
+                    <option>Otra(Especificar)</option>
+                </select> <br>
+
+                <br>
+
+                <label>Rubro/Material o Técnica</label><br>
+                <select required name="Rubro o Técnica">
+                    <option value="" disabled>---Seleccione un Rubro/Material/Técnica---</option>
+                    <option value="" selected >Cerámica / Arcilla</option>
+                    <option>Textil (Vicuña, Llama, Oveja)</option>
+                    <option>Piedra / Rodocrosita</option>
+                    <option>Cerámica / Arcilla</option>
+                    <option>Cestería / Fibras Vegetales (Símbol)</option>
+                    <option>Madera y Caña</option>
+                    <option>Metal / Orfebrería (Alpaca, Plata)</option>
+                    <option>Cuero</option>
+                    <option>Asta y Hueso</option>
+                    <option>Otra(Especificar)</option>
+                </select> <br>
+
+                <br>
+
+                <label>Descripción</label><br>
+                <textarea name="Descripción"  cols="40" rows="5" maxlength="250">Jarron hecho a mano con arcilla de alta temperatura. Esmaltado en tonos azules y verdes. Pieza unica.</textarea><br>
+
+                <br>
+
+                <label>Precio (ARS)</label>
+                <input type="number" value="20.000" min="1" ><br>
+
+                <br>
+
+                <label>Cantidad en stock</label>
+                <input type="number" value="2" min="1"><br>
+
+                <br>
+
+                <label>Peso aproximado (Kg)</label>
+                <input type="number" value="1.2" min="0.01" step="0.01"><br>
+
+                <br>
+
+                <label>Dimensiones</label>
+                <input type="text" value="25cm x 18cm x 18cm" placeholder="Ej:20cm x 15 cm x 10 cm">
+
+            </fieldset>
+            <fieldset>
+                <legend>Imagenes actuales</legend>
+                <label>Imagen Principal: </label> <br>
+                <br>
+                <img src="no-existe" alt="Imagen principal"> <br>
+                <input type="checkbox" > <label>Eliminar imagen actual</label>
+
+                <br>
+                <br>
+                <label>Imagenes Adicionales</label><br>
+                <table>
+                    <tr>
+                        <th>Vista previa</th>
+                        <th>Eliminar</th>
+                    </tr>
+
+                    <tr>
+                        <td><img src="no-existe" alt="Adicional 1"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="no-existe" alt="Adicional 2"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+
+                </table>
+
+                <br>
+                <br>
+                <label>Agregar nuevas imagenes</label><br>
+                <input type="file"><br>
+                <input type="file">
+
+            </fieldset>
+            <br>
+            <input type="submit" value="Guardar cambios"> <input type="reset" value="Restaurar valores originales">
+
+        </form>
+        </section>
+
+
+        <br>
+        <hr>
+
+        <section>
+            <h2 id="sección-eliminar">Eliminar productos </h2>
+
+            <h3><strong>Eliminar por ID</strong></h3>
+            <label>ID del producto a eliminar:</label>
+            <input type="text" placeholder="Ej: PROD-2026-023"> <input type="button" value="Eliminar producto">
+
+            <br>
+            <br>
+            <h3><strong>Eliminación masiva</strong></h3>
+            <form>
+            <table>
+                <tr>
+                    <td></td>
+                    <td><strong>ID</strong></td>
+                    <td><strong>Nombre</strong></td>
+                    <td><strong>Precio</strong></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>PROD-2026-023</td>
+                    <td>Jarron de ceramica artesanal</td>
+                    <td>12.000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>PROD-2026-029</td>
+                    <td>Botas de cuero</td>
+                    <td>20.000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>PROD-2026-030</td>
+                    <td>Collar de plata</td>
+                    <td>50.000</td>
+                </tr>
+
+
+            </table>
+                <br>
+                <input type="submit" value="Eliminar productos seleccionados">
+            </form>
+
+        </section>
+
+        <br>
+        <br>
+
+    <footer>
+        <p>
+        Poncho Digital / Fiesta Nacional e Internacional del Poncho
+        </p>
+    </footer>
+
+    </body>
+
+</html>

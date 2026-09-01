@@ -11,6 +11,14 @@
     color: #734435ff;
     font-weight: bold;
 }
+h1 {
+    background-color: #29324fff;
+    color: white;
+    padding: 30px;
+    margin-bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
 
 footer {
     background-color: #29324fff;
@@ -18,4 +26,8 @@ footer {
     padding: 15px;
     margin-top: 25px;
     text-align: center;
+}
+
+body {
+    background-color: #f1f1f1ff;
 }

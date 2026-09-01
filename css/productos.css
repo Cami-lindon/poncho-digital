@@ -1,0 +1,21 @@
+.navbar-celeste {
+    background-color: #b1bdddff;
+    padding:10px;
+    margin-bottom: 25px;
+}
+
+.navbar-celeste .nav-link {
+    color: #29324fff;
+}
+.navbar-celeste .nav-link:hover, .navbar-celeste .nav-link.active {
+    color: #734435ff;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #29324fff;
+    color: white;
+    padding: 15px;
+    margin-top: 25px;
+    text-align: center;
+}

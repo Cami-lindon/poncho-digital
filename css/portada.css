@@ -6,7 +6,6 @@
 --platinum: #f1f1f1ff; */
 
 
-
 h1 {
     background-color: #29324fff;
     color: white;
@@ -20,6 +19,24 @@ h2 {
     color: #734435ff;
 }
 
+h3 {
+    color: #29324fff;
+}
+
+article:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-azul {
+    background-color: #29324fff;
+    color: white;
+}
+
+.btn-azul:hover {
+    background-color: #1d2338;
+    color: #ffffff;
+}
+
 .navbar-celeste {
     background-color: #b1bdddff;
     padding:10px;
@@ -29,11 +46,11 @@ h2 {
 .navbar-celeste .nav-link {
     color: #29324fff;
 }
+
 .navbar-celeste .nav-link:hover, .navbar-celeste .nav-link.active {
     color: #734435ff;
     font-weight: bold;
 }
-
 
 .carousel-item img {
     max-height: 500px;
@@ -47,3 +64,4 @@ footer {
     margin-top: 25px;
     text-align: center;
 }
+

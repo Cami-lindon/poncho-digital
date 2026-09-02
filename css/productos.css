@@ -121,18 +121,17 @@ tr:hover {
 }
 
 
-/* Ocultamos todas las secciones de productos por defecto */
+
 body section.container.mb-5 {
     display: none;
 }
 
-/* Mostramos únicamente la sección a la que le hicieron clic en el menú */
+
 section.container.mb-5:target {
     display: block !important;
 }
 
-/* Si el usuario recién entra a la página (sin ningún # en la URL),
-   mostramos la primera sección (Agregar) por defecto para que no aparezca vacío */
+
 body:not(:has(:target)) #sección-misproductos {
     display: block !important;
 }

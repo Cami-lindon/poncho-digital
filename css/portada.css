@@ -5,10 +5,15 @@
 --pearl-beige: #dbcba0ff;
 --platinum: #f1f1f1ff; */
 
+body {
+    background-color: #f1f1f1ff;
+    font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+}
 
 h1 {
+    font-family: 'Lora', Georgia, serif;
     background-color: #29324fff;
-    color: white;
+    color: #dbcba0ff;
     padding: 30px;
     margin-bottom: 0;
     text-align: center;

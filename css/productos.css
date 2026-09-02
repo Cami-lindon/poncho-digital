@@ -133,6 +133,6 @@ section.container.mb-5:target {
 
 /* Si el usuario recién entra a la página (sin ningún # en la URL),
    mostramos la primera sección (Agregar) por defecto para que no aparezca vacío */
-body:not(:has(:target)) #sección-agregar {
+body:not(:has(:target)) #sección-misproductos {
     display: block !important;
 }

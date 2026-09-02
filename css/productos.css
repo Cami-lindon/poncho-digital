@@ -1,3 +1,11 @@
+/* CSS HEX /
+--powder-blue: #b1bdddff;
+--space-indigo: #29324fff;
+--clay-soil: #734435ff;
+--pearl-beige: #dbcba0ff;
+--platinum: #f1f1f1ff; */
+
+
 .navbar-celeste {
     background-color: #b1bdddff;
     padding:10px;
@@ -28,6 +36,103 @@ footer {
     text-align: center;
 }
 
+fieldset {
+    background-color: #dbcba0ff;
+    border: 2px solid #b1bdddff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(41, 50, 79, 0.05);
+}
+
+legend {
+    font-weight: bold;
+    color: #734435ff;
+    padding: 0 6px;
+    font-size: 1.15rem;
+}
 body {
     background-color: #f1f1f1ff;
+    color: #29324fff;
+}
+
+.principal {
+    color: #734435ff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+label, .form-label {
+    color: #29324fff !important;
+    font-weight: 700 !important;
+}
+section h3 {
+    color: #734435ff;
+    font-weight: 700;
+}
+table {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 4px rgba(41, 50, 79, 0.05);
+}
+
+.table thead th {
+    background-color: #29324fff !important;
+    color: #ffffff !important;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f1f1ff;
+    color: #29324fff;
+    vertical-align: middle;
+}
+
+tr:hover {
+    background-color: rgba(177, 189, 221, 0.15);
+}
+
+.table-bordered, .table-bordered th, .table-bordered td {
+    border: 1px solid #b1bdddff !important;
+}
+
+.card {
+    background-color: #dbcba0ff;
+    border: 2px solid #b1bdddff !important;
+}
+
+.btn-primary {
+    background-color: #29324fff !important;
+    border-color: #29324fff !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #1f263c !important;
+    border-color: #1f263c !important;
+}
+
+
+/* Ocultamos todas las secciones de productos por defecto */
+body section.container.mb-5 {
+    display: none;
+}
+
+/* Mostramos únicamente la sección a la que le hicieron clic en el menú */
+section.container.mb-5:target {
+    display: block !important;
+}
+
+/* Si el usuario recién entra a la página (sin ningún # en la URL),
+   mostramos la primera sección (Agregar) por defecto para que no aparezca vacío */
+body:not(:has(:target)) #sección-agregar {
+    display: block !important;
 }

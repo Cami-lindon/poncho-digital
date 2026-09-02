@@ -2,6 +2,7 @@
 Integrantes:
 Camila Micaela Lindon MU:01907
 Ramiro Exequiel Seco  MU:01797
+Morales Sofía         MU:01897
 
 Docentes:
 Mgtr. Cecilia E. Gallardo

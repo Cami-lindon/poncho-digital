@@ -16,7 +16,7 @@
         <nav class="navbar navbar-expand-sm navbar-celeste sticky-top">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <img src="../imagenes/productos/poncho-logo.png" width="95" height="30">
+                        <img src="../imagenes/general/poncho-logo.png" width="95" height="30">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                         <span class="navbar-toggler-icon"></span>
@@ -44,388 +44,388 @@
             </nav>
         </header>
 
-<section class="container my-4">
-            <h2 class="principal">Panel de Gestión de Productos</h2>
-        </section>
+        <section class="container my-4">
+                    <h2 class="principal">Panel de Gestión de Productos</h2>
+                </section>
 
-<section id="sección-agregar" class="container mb-5">
-            <div class="card shadow-sm border-0">
-                <div class="card-body p-4">
-                    <form class="row g-3">
-                        <div class="col-12">
-                            <h3  class="mb-3">Agregar productos</h3>
+        <section id="sección-agregar" class="container mb-5">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <form class="row g-3">
+                                <div class="col-12">
+                                    <h3  class="mb-3">Agregar productos</h3>
+                                </div>
+
+                                <fieldset class="col-12 border-0 p-0 m-0 bg-transparent">
+                                    <legend class="mb-3">Nuevo producto</legend>
+
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label for="nombre" class="form-label">Nombre del producto</label>
+                                            <input type="text" class="form-control" id="nombre" name="nombre" maxlength="250">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="categoria" class="form-label">Categoría</label>
+                                            <select class="form-select" id="categoria" name="Categoria" required>
+                                                <option value="" selected disabled>---Seleccione una categoría---</option>
+                                                <option>Indumentaria y Calzado</option>
+                                                <option>Accesorios y Joyería</option>
+                                                <option>Hogar, Cocina y Decoración</option>
+                                                <option>Mates y Marroquinería</option>
+                                                <option>Arte y Colección</option>
+                                                <option>Otra(Especificar)</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="rubro" class="form-label">Rubro/Material o Técnica</label>
+                                            <select class="form-select" id="rubro" name="Rubro o Técnica" required>
+                                                <option value="" selected disabled>---Seleccione un Rubro/Material/Técnica---</option>
+                                                <option>Textil (Vicuña, Llama, Oveja)</option>
+                                                <option>Piedra / Rodocrosita</option>
+                                                <option>Cerámica / Arcilla</option>
+                                                <option>Cestería / Fibras Vegetales (Símbol)</option>
+                                                <option>Madera y Caña</option>
+                                                <option>Metal / Orfebrería (Alpaca, Plata)</option>
+                                                <option>Cuero</option>
+                                                <option>Asta y Hueso</option>
+                                                <option>Otra(Especificar)</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="descripcion" class="form-label">Descripción</label>
+                                            <textarea class="form-control" id="descripcion" name="Descripción" rows="3" maxlength="250"></textarea>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="precio" class="form-label">Precio (ARS)</label>
+                                            <input type="number" class="form-control" id="precio" min="1">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="stock" class="form-label">Cantidad en stock</label>
+                                            <input type="number" class="form-control" id="stock" min="1">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="peso" class="form-label">Peso aproximado (Kg)</label>
+                                            <input type="number" class="form-control" id="peso" min="0.01" step="0.01">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="dimensiones" class="form-label">Dimensiones</label>
+                                            <input type="text" class="form-control" id="dimensiones" placeholder="Ej: 20cm x 15cm x 10cm">
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="col-12 border-0 p-0 mt-4 bg-transparent">
+                                    <legend class="mb-3">Imagen principal del producto</legend>
+
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label for="imagenPrincipal" class="form-label">Imagen del producto:</label>
+                                            <input type="file" class="form-control" id="imagenPrincipal">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label">Imágenes adicionales (hasta 4):</label>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <input type="file" class="form-control" aria-label="Imagen adicional 1">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="file" class="form-control" aria-label="Imagen adicional 2">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="file" class="form-control" aria-label="Imagen adicional 3">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="file" class="form-control" aria-label="Imagen adicional 4">
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary">Publicar producto</button>
+                                    <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+                                </div>
+                            </form>
                         </div>
-
-                        <fieldset class="col-12 border-0 p-0 m-0 bg-transparent">
-                            <legend class="mb-3">Nuevo producto</legend>
-
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <label for="nombre" class="form-label">Nombre del producto</label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre" maxlength="250">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="categoria" class="form-label">Categoría</label>
-                                    <select class="form-select" id="categoria" name="Categoria" required>
-                                        <option value="" selected disabled>---Seleccione una categoría---</option>
-                                        <option>Indumentaria y Calzado</option>
-                                        <option>Accesorios y Joyería</option>
-                                        <option>Hogar, Cocina y Decoración</option>
-                                        <option>Mates y Marroquinería</option>
-                                        <option>Arte y Colección</option>
-                                        <option>Otra(Especificar)</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="rubro" class="form-label">Rubro/Material o Técnica</label>
-                                    <select class="form-select" id="rubro" name="Rubro o Técnica" required>
-                                        <option value="" selected disabled>---Seleccione un Rubro/Material/Técnica---</option>
-                                        <option>Textil (Vicuña, Llama, Oveja)</option>
-                                        <option>Piedra / Rodocrosita</option>
-                                        <option>Cerámica / Arcilla</option>
-                                        <option>Cestería / Fibras Vegetales (Símbol)</option>
-                                        <option>Madera y Caña</option>
-                                        <option>Metal / Orfebrería (Alpaca, Plata)</option>
-                                        <option>Cuero</option>
-                                        <option>Asta y Hueso</option>
-                                        <option>Otra(Especificar)</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="descripcion" class="form-label">Descripción</label>
-                                    <textarea class="form-control" id="descripcion" name="Descripción" rows="3" maxlength="250"></textarea>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="precio" class="form-label">Precio (ARS)</label>
-                                    <input type="number" class="form-control" id="precio" min="1">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="stock" class="form-label">Cantidad en stock</label>
-                                    <input type="number" class="form-control" id="stock" min="1">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="peso" class="form-label">Peso aproximado (Kg)</label>
-                                    <input type="number" class="form-control" id="peso" min="0.01" step="0.01">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="dimensiones" class="form-label">Dimensiones</label>
-                                    <input type="text" class="form-control" id="dimensiones" placeholder="Ej: 20cm x 15cm x 10cm">
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="col-12 border-0 p-0 mt-4 bg-transparent">
-                            <legend class="mb-3">Imagen principal del producto</legend>
-
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <label for="imagenPrincipal" class="form-label">Imagen del producto:</label>
-                                    <input type="file" class="form-control" id="imagenPrincipal">
-                                </div>
-
-                                <div class="col-12">
-                                    <label class="form-label">Imágenes adicionales (hasta 4):</label>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <input type="file" class="form-control" aria-label="Imagen adicional 1">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="file" class="form-control" aria-label="Imagen adicional 2">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="file" class="form-control" aria-label="Imagen adicional 3">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="file" class="form-control" aria-label="Imagen adicional 4">
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <div class="col-12 mt-4">
-                            <button type="submit" class="btn btn-primary">Publicar producto</button>
-                            <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-<section id="sección-misproductos" class="container mb-5">
-            <div class="card shadow-sm border-0">
-                <div class="card-body p-4">
-                    <h3 class="mb-3">Mis productos publicados</h3>
-
-                    <div class="table-responsive">
-                        <table class="table table-bordered mb-0">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Imagen</th>
-                                    <th>Nombre</th>
-                                    <th>Categoria</th>
-                                    <th>Rubro/Material o Técnica</th>
-                                    <th>Precio</th>
-                                    <th>Stock</th>
-                                    <th>Fecha</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="align-middle">1</td>
-                                    <td class="align-middle">Imagen</td>
-                                    <td class="align-middle">Botas de Cuero</td>
-                                    <td class="align-middle">Indumentaria y Calzado</td>
-                                    <td class="align-middle">Cuero</td>
-                                    <td class="align-middle">50.000</td>
-                                    <td class="align-middle">2</td>
-                                    <td class="align-middle">01/08/2026</td>
-                                    <td class="align-middle">
-                                        <a href="#sección-modificar" class="btn btn-sm btn-outline-primary me-1">Modificar</a>
-                                        <input type="button" class="btn btn-sm btn-outline-danger" value="Eliminar">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
+        <section id="sección-misproductos" class="container mb-5">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <h3 class="mb-3">Mis productos publicados</h3>
 
-
-<section id="sección-modificar" class="container mb-5">
-            <div class="card shadow-sm border-0">
-                <div class="card-body p-4">
-                    <form class="row g-3">
-                        <div class="col-12">
-                            <h3 class="mb-1">Modificar productos</h3>
-                            <h3 style="font-size: 1.15rem;">Editando: PROD-2026-023 Jarrón de ceramica artesanal</h3>
+                            <div class="table-responsive">
+                                <table class="table table-bordered mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Categoria</th>
+                                            <th>Rubro/Material o Técnica</th>
+                                            <th>Precio</th>
+                                            <th>Stock</th>
+                                            <th>Fecha</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="align-middle">1</td>
+                                            <td class="align-middle">Imagen</td>
+                                            <td class="align-middle">Botas de Cuero</td>
+                                            <td class="align-middle">Indumentaria y Calzado</td>
+                                            <td class="align-middle">Cuero</td>
+                                            <td class="align-middle">50.000</td>
+                                            <td class="align-middle">2</td>
+                                            <td class="align-middle">01/08/2026</td>
+                                            <td class="align-middle">
+                                                <a href="#sección-modificar" class="btn btn-sm btn-outline-primary me-1">Modificar</a>
+                                                <input type="button" class="btn btn-sm btn-outline-danger" value="Eliminar">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
+                    </div>
+                </section>
 
-                        <fieldset class="col-12 border-0 p-0 m-0 bg-transparent">
-                            <legend class="mb-3">Información del producto</legend>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label"><strong>ID</strong>: PROD-2026-023</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label"><strong>Fecha de publicación</strong>: 01/08/26</label>
-                                </div>
-                            </div>
-                        </fieldset>
 
-                        <fieldset class="col-12 border-0 p-0 mt-3 bg-transparent">
-                            <legend class="mb-3">Datos del producto</legend>
 
-                            <div class="row g-3">
+        <section id="sección-modificar" class="container mb-5">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <form class="row g-3">
                                 <div class="col-12">
-                                    <label for="nombre-mod" class="form-label">Nombre del producto</label>
-                                    <input type="text" class="form-control" id="nombre-mod" name="nombre" value="Jarron de ceramica artesanal" maxlength="250">
+                                    <h3 class="mb-1">Modificar productos</h3>
+                                    <h3 style="font-size: 1.15rem;">Editando: PROD-2026-023 Jarrón de ceramica artesanal</h3>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <label for="categoria-mod" class="form-label">Categoria</label>
-                                    <select class="form-select" id="categoria-mod" name="Categoria" required>
-                                        <option value="" disabled>---Seleccione una categoría---</option>
-                                        <option value="Hogar, Cocina y Decoración" selected>Hogar, Cocina y Decoración</option>
-                                        <option>Indumentaria y Calzado</option>
-                                        <option>Accesorios y Joyería</option>
-                                        <option>Mates y Marroquinería</option>
-                                        <option>Arte y Colección</option>
-                                        <option>Otra(Especificar)</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="rubro-mod" class="form-label">Rubro/Material o Técnica</label>
-                                    <select class="form-select" id="rubro-mod" name="Rubro o Técnica" required>
-                                        <option value="" disabled>---Seleccione un Rubro/Material/Técnica---</option>
-                                        <option value="Cerámica / Arcilla" selected>Cerámica / Arcilla</option>
-                                        <option>Textil (Vicuña, Llama, Oveja)</option>
-                                        <option>Piedra / Rodocrosita</option>
-                                        <option>Cestería / Fibras Vegetales (Símbol)</option>
-                                        <option>Madera y Caña</option>
-                                        <option>Metal / Orfebrería (Alpaca, Plata)</option>
-                                        <option>Cuero</option>
-                                        <option>Asta y Hueso</option>
-                                        <option>Otra(Especificar)</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="descripcion-mod" class="form-label">Descripción</label>
-                                    <textarea class="form-control" id="descripcion-mod" name="Descripción" rows="3" maxlength="250">Jarron hecho a mano con arcilla de alta temperatura.Pieza unica.</textarea>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="precio-mod" class="form-label">Precio (ARS)</label>
-                                    <input type="number" class="form-control" id="precio-mod" value="20000" min="1">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="stock-mod" class="form-label">Cantidad en stock</label>
-                                    <input type="number" class="form-control" id="stock-mod" value="2" min="1">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="peso-mod" class="form-label">Peso aproximado (Kg)</label>
-                                    <input type="number" class="form-control" id="peso-mod" value="1.2" min="0.01" step="0.01">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="dimensiones-mod" class="form-label">Dimensiones</label>
-                                    <input type="text" class="form-control" id="dimensiones-mod" value="25cm x 18cm x 18cm" placeholder="Ej: 20cm x 15cm x 10cm">
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="col-12 border-0 p-0 mt-3 bg-transparent">
-                            <legend class="mb-3">Imagenes actuales</legend>
-
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <label class="form-label">Imagen Principal:</label>
-                                    <div class="mb-2">
-                                        <img src="../imagenes/productos/imagen-jarron.jpg" alt="Imagen principal" class="img-thumbnail" style="max-height: 100px;">
+                                <fieldset class="col-12 border-0 p-0 m-0 bg-transparent">
+                                    <legend class="mb-3">Información del producto</legend>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label"><strong>ID</strong>: PROD-2026-023</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label"><strong>Fecha de publicación</strong>: 01/08/26</label>
+                                        </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="eliminarImgPrinc">
-                                        <label class="form-check-label" for="eliminarImgPrinc">Eliminar imagen actual</label>
+                                </fieldset>
+
+                                <fieldset class="col-12 border-0 p-0 mt-3 bg-transparent">
+                                    <legend class="mb-3">Datos del producto</legend>
+
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label for="nombre-mod" class="form-label">Nombre del producto</label>
+                                            <input type="text" class="form-control" id="nombre-mod" name="nombre" value="Jarron de ceramica artesanal" maxlength="250">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="categoria-mod" class="form-label">Categoria</label>
+                                            <select class="form-select" id="categoria-mod" name="Categoria" required>
+                                                <option value="" disabled>---Seleccione una categoría---</option>
+                                                <option value="Hogar, Cocina y Decoración" selected>Hogar, Cocina y Decoración</option>
+                                                <option>Indumentaria y Calzado</option>
+                                                <option>Accesorios y Joyería</option>
+                                                <option>Mates y Marroquinería</option>
+                                                <option>Arte y Colección</option>
+                                                <option>Otra(Especificar)</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="rubro-mod" class="form-label">Rubro/Material o Técnica</label>
+                                            <select class="form-select" id="rubro-mod" name="Rubro o Técnica" required>
+                                                <option value="" disabled>---Seleccione un Rubro/Material/Técnica---</option>
+                                                <option value="Cerámica / Arcilla" selected>Cerámica / Arcilla</option>
+                                                <option>Textil (Vicuña, Llama, Oveja)</option>
+                                                <option>Piedra / Rodocrosita</option>
+                                                <option>Cestería / Fibras Vegetales (Símbol)</option>
+                                                <option>Madera y Caña</option>
+                                                <option>Metal / Orfebrería (Alpaca, Plata)</option>
+                                                <option>Cuero</option>
+                                                <option>Asta y Hueso</option>
+                                                <option>Otra(Especificar)</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="descripcion-mod" class="form-label">Descripción</label>
+                                            <textarea class="form-control" id="descripcion-mod" name="Descripción" rows="3" maxlength="250">Jarron hecho a mano con arcilla de alta temperatura.Pieza unica.</textarea>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="precio-mod" class="form-label">Precio (ARS)</label>
+                                            <input type="number" class="form-control" id="precio-mod" value="20000" min="1">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="stock-mod" class="form-label">Cantidad en stock</label>
+                                            <input type="number" class="form-control" id="stock-mod" value="2" min="1">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="peso-mod" class="form-label">Peso aproximado (Kg)</label>
+                                            <input type="number" class="form-control" id="peso-mod" value="1.2" min="0.01" step="0.01">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="dimensiones-mod" class="form-label">Dimensiones</label>
+                                            <input type="text" class="form-control" id="dimensiones-mod" value="25cm x 18cm x 18cm" placeholder="Ej: 20cm x 15cm x 10cm">
+                                        </div>
                                     </div>
-                                </div>
+                                </fieldset>
 
-                                <div class="col-12">
-                                    <label class="form-label">Imagenes Adicionales</label>
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th>Vista previa</th>
-                                                    <th>Eliminar</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="align-middle"><img src="../imagenes/productos/imagen-jarron-secundaria.jpg" alt="Adicional 1" class="img-thumbnail" style="max-height: 60px;"></td>
-                                                    <td class="align-middle"><input class="form-check-input" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle"><img src="../imagenes/productos/imagen-jarron-superior.jpg" alt="Adicional 2" class="img-thumbnail" style="max-height: 60px;"></td>
-                                                    <td class="align-middle"><input class="form-check-input" type="checkbox"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                <fieldset class="col-12 border-0 p-0 mt-3 bg-transparent">
+                                    <legend class="mb-3">Imagenes actuales</legend>
+
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label class="form-label">Imagen Principal:</label>
+                                            <div class="mb-2">
+                                                <img src="../imagenes/productos/imagen-jarron.jpg" alt="Imagen principal" class="img-thumbnail" style="max-height: 100px;">
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="eliminarImgPrinc">
+                                                <label class="form-check-label" for="eliminarImgPrinc">Eliminar imagen actual</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label">Imagenes Adicionales</label>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Vista previa</th>
+                                                            <th>Eliminar</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="align-middle"><img src="../imagenes/productos/imagen-jarron-secundaria.jpg" alt="Adicional 1" class="img-thumbnail" style="max-height: 60px;"></td>
+                                                            <td class="align-middle"><input class="form-check-input" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle"><img src="../imagenes/productos/imagen-jarron-superior.jpg" alt="Adicional 2" class="img-thumbnail" style="max-height: 60px;"></td>
+                                                            <td class="align-middle"><input class="form-check-input" type="checkbox"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label">Agregar nuevas imagenes</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="file" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="file" class="form-control">
+                                        </div>
                                     </div>
-                                </div>
+                                </fieldset>
 
-                                <div class="col-12">
-                                    <label class="form-label">Agregar nuevas imagenes</label>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                                    <button type="reset" class="btn btn-secondary">Restaurar valores originales</button>
                                 </div>
-                                <div class="col-md-6">
-                                    <input type="file" class="form-control">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="file" class="form-control">
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <div class="col-12 mt-4">
-                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
-                            <button type="reset" class="btn btn-secondary">Restaurar valores originales</button>
+                            </form>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </section>
+                    </div>
+                </section>
 
 
 
 
-<section id="sección-eliminar" class="container mb-5">
-            <div class="card shadow-sm border-0">
-                <div class="card-body p-4">
-                    <form class="row g-3">
-                        <div class="col-12">
-                            <h3  class="mb-3">Eliminar productos</h3>
-                        </div>
-
-                        <fieldset class="col-12 border-0 p-0 m-0 bg-transparent">
-                            <legend class="mb-3"><strong>Eliminar por ID</strong></legend>
-
-                            <div class="row g-3 align-items-end">
-                                <div class="col-md-8">
-                                    <label for="idEliminar" class="form-label">ID del producto a eliminar:</label>
-                                    <input type="text" class="form-control" id="idEliminar" placeholder="Ej: PROD-2026-023">
-                                </div>
-                                <div class="col-md-4">
-                                    <button type="button" class="btn btn-danger w-100">Eliminar producto</button>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset class="col-12 border-0 p-0 mt-3 bg-transparent">
-                            <legend class="mb-3"><strong>Eliminación masiva</strong></legend>
-
-                            <div class="row g-3">
+        <section id="sección-eliminar" class="container mb-5">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <form class="row g-3">
                                 <div class="col-12">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width: 50px;"></th>
-                                                    <th>ID</th>
-                                                    <th>Nombre</th>
-                                                    <th>Precio</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="align-middle"><input class="form-check-input" type="checkbox"></td>
-                                                    <td class="align-middle">PROD-2026-023</td>
-                                                    <td class="align-middle">Jarron de ceramica artesanal</td>
-                                                    <td class="align-middle">12.000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle"><input class="form-check-input" type="checkbox"></td>
-                                                    <td class="align-middle">PROD-2026-029</td>
-                                                    <td class="align-middle">Botas de cuero</td>
-                                                    <td class="align-middle">20.000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle"><input class="form-check-input" type="checkbox"></td>
-                                                    <td class="align-middle">PROD-2026-030</td>
-                                                    <td class="align-middle">Collar de plata</td>
-                                                    <td class="align-middle">50.000</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <h3  class="mb-3">Eliminar productos</h3>
+                                </div>
+
+                                <fieldset class="col-12 border-0 p-0 m-0 bg-transparent">
+                                    <legend class="mb-3"><strong>Eliminar por ID</strong></legend>
+
+                                    <div class="row g-3 align-items-end">
+                                        <div class="col-md-8">
+                                            <label for="idEliminar" class="form-label">ID del producto a eliminar:</label>
+                                            <input type="text" class="form-control" id="idEliminar" placeholder="Ej: PROD-2026-023">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-danger w-100">Eliminar producto</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </fieldset>
 
-                                <div class="col-12 mt-3">
-                                    <button type="submit" class="btn btn-danger">Eliminar productos seleccionados</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </section>
+                                <fieldset class="col-12 border-0 p-0 mt-3 bg-transparent">
+                                    <legend class="mb-3"><strong>Eliminación masiva</strong></legend>
+
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 50px;"></th>
+                                                            <th>ID</th>
+                                                            <th>Nombre</th>
+                                                            <th>Precio</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="align-middle"><input class="form-check-input" type="checkbox"></td>
+                                                            <td class="align-middle">PROD-2026-023</td>
+                                                            <td class="align-middle">Jarron de ceramica artesanal</td>
+                                                            <td class="align-middle">12.000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle"><input class="form-check-input" type="checkbox"></td>
+                                                            <td class="align-middle">PROD-2026-029</td>
+                                                            <td class="align-middle">Botas de cuero</td>
+                                                            <td class="align-middle">20.000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle"><input class="form-check-input" type="checkbox"></td>
+                                                            <td class="align-middle">PROD-2026-030</td>
+                                                            <td class="align-middle">Collar de plata</td>
+                                                            <td class="align-middle">50.000</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 mt-3">
+                                            <button type="submit" class="btn btn-danger">Eliminar productos seleccionados</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </section>
 
 
-    <footer>
-        <p>Poncho Digital / Fiesta Nacional e Internacional del Poncho</p>
-    </footer>
+            <footer>
+                <p>Poncho Digital / Fiesta Nacional e Internacional del Poncho</p>
+            </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>
 
 </html>

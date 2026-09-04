@@ -28,13 +28,6 @@ h1 {
     text-transform: uppercase;
 }
 
-footer {
-    background-color: #29324fff;
-    color: white;
-    padding: 15px;
-    margin-top: 25px;
-    text-align: center;
-}
 
 fieldset {
     background-color: #dbcba0ff;
@@ -52,7 +45,6 @@ legend {
     font-size: 1.15rem;
 }
 body {
-    background-color: #f1f1f1ff;
     color: #29324fff;
 }
 

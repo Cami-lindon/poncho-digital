@@ -5,3 +5,19 @@
     --pearl-beige: #dbcba0ff;
     --platinum: #f1f1f1ff;
 }
+
+footer {
+    background-color: var(--space-indigo);
+    color: var(--platinum);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+body {
+    background-color: var(--platinum);
+}

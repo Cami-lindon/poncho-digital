@@ -1,7 +1,3 @@
-body {
-    background-color: var(--platinum);
-}
-
 .navbar-poncho {
     background-color: var(--space-indigo);
 }
@@ -100,17 +96,7 @@ legend {
     transform: translateY(-2px);
 }
 
-.footer-poncho {
-    background-color: var(--space-indigo);
-    color: var(--platinum);
-    text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 2rem;
-}
 
-.footer-poncho p {
-    margin: 0;
-}
 @media (max-width: 767.98px) {
 
     .registro-card {
@@ -131,14 +117,6 @@ legend {
     }
 }
 
-/*Logo de la pagina*/
-
-.logo-poncho {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
-    margin-right: 0.75rem;
-}
 
 .navbar-brand {
     font-weight: 700;

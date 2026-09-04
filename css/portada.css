@@ -6,7 +6,6 @@
 --platinum: #f1f1f1ff; */
 
 body {
-    background-color: #f1f1f1ff;
     font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
 }
 
@@ -62,11 +61,5 @@ article:hover {
     object-fit: cover;
 }
 
-footer {
-    background-color: #29324fff;
-    color: white;
-    padding: 15px;
-    margin-top: 25px;
-    text-align: center;
-}
+
 

@@ -1,18 +1,11 @@
-/* CSS HEX /
---powder-blue: #b1bdddff;
---space-indigo: #29324fff;
---clay-soil: #734435ff;
---pearl-beige: #dbcba0ff;
---platinum: #f1f1f1ff; */
-
 body {
     font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
 }
 
 h1 {
     font-family: 'Lora', Georgia, serif;
-    background-color: #29324fff;
-    color: #dbcba0ff;
+    background-color: var(--space-indigo);
+    color: var(--pearl-beige);
     padding: 30px;
     margin-bottom: 0;
     text-align: center;
@@ -20,11 +13,11 @@ h1 {
 }
 
 h2 {
-    color: #734435ff;
+    color: var(--clay-soil);
 }
 
 h3 {
-    color: #29324fff;
+    color: var(--space-indigo);
 }
 
 article:hover {
@@ -32,27 +25,27 @@ article:hover {
 }
 
 .btn-azul {
-    background-color: #29324fff;
+    background-color: var(--space-indigo);
     color: white;
 }
 
 .btn-azul:hover {
     background-color: #1d2338;
-    color: #ffffff;
+    color: white;
 }
 
 .navbar-celeste {
-    background-color: #b1bdddff;
+    background-color: var(--powder-blue);
     padding:10px;
     margin-bottom: 25px;
 }
 
 .navbar-celeste .nav-link {
-    color: #29324fff;
+    color: var(--space-indigo);
 }
 
 .navbar-celeste .nav-link:hover, .navbar-celeste .nav-link.active {
-    color: #734435ff;
+    color: var(--clay-soil);
     font-weight: bold;
 }
 

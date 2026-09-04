@@ -1,0 +1,147 @@
+body {
+    background-color: var(--platinum);
+}
+
+.navbar-poncho {
+    background-color: var(--space-indigo);
+}
+
+.registro-main {
+    min-height: calc(100vh - 70px);
+}
+
+.registro-card {
+    background-color: #ffffff;
+    border: 1px solid var(--pearl-beige);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(41, 50, 79, 0.12);
+}
+
+.registro-etiqueta {
+    color: var(--clay-soil);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.registro-titulo {
+    color: var(--space-indigo);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.registro-descripcion {
+    color: #666666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.registro-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.registro-card:hover {
+    transform: translateY(-3px);
+}
+
+fieldset {
+    border: 1px solid var(--pearl-beige);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    color: var(--clay-soil);
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0 0.6rem;
+    width: auto;
+}
+
+.form-label {
+    color: var(--space-indigo);
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #c9c9c9;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--powder-blue);
+    box-shadow: 0 0 0 0.2rem rgba(177, 189, 221, 0.35);
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color: var(--powder-blue);
+}
+
+.btn-artesanos {
+    background-color: var(--clay-soil);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-artesanos:hover {
+    background-color: var(--space-indigo);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.footer-poncho {
+    background-color: var(--space-indigo);
+    color: var(--platinum);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer-poncho p {
+    margin: 0;
+}
+@media (max-width: 767.98px) {
+
+    .registro-card {
+        padding: 1.25rem;
+        border-radius: 14px;
+    }
+
+    fieldset {
+        padding: 1rem;
+    }
+
+    .registro-titulo {
+        font-size: 1.8rem;
+    }
+
+    .registro-descripcion {
+        font-size: 0.95rem;
+    }
+}
+
+/*Logo de la pagina*/
+
+.logo-poncho {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    margin-right: 0.75rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.03rem;
+}
+

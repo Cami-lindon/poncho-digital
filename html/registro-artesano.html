@@ -3,137 +3,298 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Solicitud de Participación - Poncho Digital</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+    >
+
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/artesanos.css">
 </head>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYqV2I1fV6m9z9G9fR8uJY5J6xR2I"
+    crossorigin="anonymous"
+></script>
 
 <body>
 
     <header>
-        <h1>Poncho Digital</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-poncho">
+            <div class="container">
 
-        <nav>
-            <a href="portada.html">Inicio</a>
-            <a href="registro-artesano.html">Registro artesano</a>
-            <a href="Productos.html">Productos</a>
+                <a class="navbar-brand d-flex align-items-center" href="portada.html">
+                    <img
+                        src="../imagenes/general/poncho-logo.png"
+                        alt="Logo de Poncho Digital"
+                        class="logo-poncho"
+                    >
+                    <span>Poncho Digital</span>
+                </a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú de navegación"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="portada.html">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="registro-artesano.html">
+                                Registro artesano
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="Productos.html">
+                                Productos
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
         </nav>
     </header>
 
 
-    <main>
+    <main class="registro-main py-5">
 
-        <h2>Solicitud de Artesano</h2>
+        <div class="container">
 
-        <form>
+            <div class="row justify-content-center">
 
-            <fieldset>
-                <legend>Datos Personales</legend>
+                <div class="col-12 col-lg-9">
 
-                <div>
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre">
-                </div>
+                    <section class="registro-card">
 
-                <div>
-                    <label for="apellido">Apellido</label>
-                    <input type="text" name="apellido" id="apellido">
-                </div>
+                        <div class="text-center mb-4">
+                            <p class="registro-etiqueta">PONCHO DIGITAL</p>
 
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                </div>
+                            <h1 class="registro-titulo">
+                                Solicitud de Artesano
+                            </h1>
 
-                <div>
-                    <label for="telefono">Telefono</label>
-                    <input type="tel" name="telefono" id="telefono">
-                </div>
+                            <p class="registro-descripcion">
+                                Completá el siguiente formulario para solicitar
+                                tu participación en la Feria Nacional e
+                                Internacional del Poncho.
+                            </p>
+                        </div>
 
-                <div>
-                    <label for="localidad">Localidad</label>
-                    <input type="text" name="localidad" id="localidad">
-                </div>
+                        <form>
 
-            </fieldset>
+                            <fieldset>
+                                <legend>Datos Personales</legend>
 
+                                <div class="row g-3">
 
-            <fieldset>
-                <legend>Datos del Emprendimiento</legend>
+                                    <div class="col-12 col-md-6">
+                                        <label for="nombre" class="form-label">Nombre</label>
+                                        <input
+                                            type="text"
+                                            name="nombre"
+                                            id="nombre"
+                                            class="form-control"
+                                        >
+                                    </div>
 
-                <div>
-                    <label for="emprendimiento">
-                        Nombre del emprendimiento:
-                    </label>
+                                    <div class="col-12 col-md-6">
+                                        <label for="apellido" class="form-label">Apellido</label>
+                                        <input
+                                            type="text"
+                                            name="apellido"
+                                            id="apellido"
+                                            class="form-control"
+                                        >
+                                    </div>
 
-                    <input type="text" name="emprendimiento" id="emprendimiento">
-                </div>
+                                </div>
 
-                <div>
-                    <label for="rubro">Rubro:</label>
+                                <div class="row g-3">
 
-                    <select name="rubro" id="rubro">
-                        <option value="">Seleccione un rubro</option>
-                        <option value="artesania">Artesania</option>
-                        <option value="textil">Textil</option>
-                        <option value="gastronomia">Gastronomia</option>
-                        <option value="bebidas">Bebidas</option>
-                        <option value="regionales">Productos regionales</option>
-                        <option value="decoracion">Decoracion</option>
-                        <option value="joyeria">Joyeria</option>
-                        <option value="otro">Otro</option>
-                    </select>
-                </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            class="form-control"
+                                        >
+                                    </div>
 
-                <div>
-                    <label for="descripcion">
-                        Descripcion breve del emprendimiento:
-                    </label>
+                                    <div class="col-12 col-md-6">
+                                        <label for="telefono" class="form-label">Teléfono</label>
+                                        <input
+                                            type="tel"
+                                            name="telefono"
+                                            id="telefono"
+                                            class="form-control"
+                                        >
+                                    </div>
 
-                    <textarea name="descripcion" id="descripcion"></textarea>
-                </div>
+                                    <div class="col-12">
+                                        <label for="localidad" class="form-label">Localidad</label>
+                                        <input
+                                            type="text"
+                                            name="localidad"
+                                            id="localidad"
+                                            class="form-control"
+                                        >
+                                    </div>
 
-                <div>
-                    <label for="productos">
-                        ¿Qué productos comercializa?
-                    </label>
+                                </div>
 
-                    <textarea id="productos" name="productos"></textarea>
-                </div>
-
-                <div>
-                    <label for="variedad">
-                        Tipo o variedad de productos
-                    </label>
-
-                    <input type="text" id="variedad" name="variedad">
-                </div>
-
-            </fieldset>
-
-
-            <fieldset>
-                <legend>Solicitud</legend>
-
-                <div>
-                    <label for="observaciones">
-                        Observaciones adicionales
-                    </label>
-
-                    <textarea id="observaciones" name="observaciones"></textarea>
-                </div>
-
-            </fieldset>
+                            </fieldset>
 
 
-            <button type="submit">Enviar Solicitud</button>
+                            <fieldset>
+                                <legend>Datos del Emprendimiento</legend>
 
-        </form>
+                                <div class="row g-3">
 
+                                    <div class="col-12 col-md-7">
+                                        <label for="emprendimiento" class="form-label">
+                                            Nombre del emprendimiento
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            name="emprendimiento"
+                                            id="emprendimiento"
+                                            class="form-control"
+                                        >
+                                    </div>
+
+                                    <div class="col-12 col-md-5">
+                                        <label for="rubro" class="form-label">
+                                            Rubro
+                                        </label>
+
+                                        <select name="rubro" id="rubro" class="form-select">
+                                            <option value="">Seleccione un rubro</option>
+                                            <option value="artesania">Artesanía</option>
+                                            <option value="textil">Textil</option>
+                                            <option value="gastronomia">Gastronomía</option>
+                                            <option value="bebidas">Bebidas</option>
+                                            <option value="regionales">Productos regionales</option>
+                                            <option value="decoracion">Decoración</option>
+                                            <option value="joyeria">Joyería</option>
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="mt-3">
+
+                                    <label for="descripcion" class="form-label">
+                                        Descripción breve del emprendimiento
+                                    </label>
+
+                                    <textarea
+                                        name="descripcion"
+                                        id="descripcion"
+                                        class="form-control"
+                                        rows="4"
+                                        placeholder="Contanos brevemente sobre tu emprendimiento..."
+                                    ></textarea>
+
+                                </div>
+
+                                <div class="mt-3">
+
+                                    <label for="productos" class="form-label">
+                                        ¿Qué productos comercializa?
+                                    </label>
+
+                                    <textarea
+                                        id="productos"
+                                        name="productos"
+                                        class="form-control"
+                                        rows="4"
+                                        placeholder="Indicá los principales productos que comercializás..."
+                                    ></textarea>
+
+                                </div>
+
+                                <div class="mt-3">
+
+                                    <label for="variedad" class="form-label">
+                                        Tipo o variedad de productos
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="variedad"
+                                        name="variedad"
+                                        class="form-control"
+                                        placeholder="Ej.: tejidos, cerámicas, dulces regionales...">
+                                </div>
+
+                            </fieldset>
+
+                            <fieldset class="mt-4">
+
+                                <legend>Solicitud</legend>
+
+                                <div>
+                                    <label for="observaciones" class="form-label">
+                                        Observaciones adicionales
+                                    </label>
+
+                                    <textarea
+                                        id="observaciones"
+                                        name="observaciones"
+                                        class="form-control"
+                                        rows="4"
+                                        placeholder="¿Hay algo más que quieras contarnos?"
+                                    ></textarea>
+                                </div>
+
+                            </fieldset>
+
+                            <div class="text-center mt-4">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-artesanos px-5 py-2"
+                                >
+                                    Enviar solicitud
+                                </button>
+
+                            </div>
+
+                        </form>
     </main>
 
-
-    <footer>
+    <footer class="footer-poncho">
         <p>
-            Poncho Digital / Fiesta Nacional e internacional del poncho
+            Poncho Digital / Fiesta Nacional e Internacional del Poncho
         </p>
     </footer>
 

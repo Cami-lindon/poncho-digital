@@ -58,12 +58,16 @@ function mostrarProductos() {
         // Imagen
         let celdaImagen = document.createElement("td");
 
-        let imgProducto = document.createElement("img");
-        imgProducto.src = producto.imagen;
-        imgProducto.classList.add("img-thumbnail");
-        imgProducto.style.maxHeight = "60px";
+         if (producto.imagen != "") {
+            let imgProducto = document.createElement("img");
+            imgProducto.src = producto.imagen;
+            imgProducto.classList.add("img-thumbnail");
+            imgProducto.style.maxHeight = "60px";
 
-        celdaImagen.appendChild(imgProducto);
+            celdaImagen.appendChild(imgProducto);
+        } else {
+            celdaImagen.textContent = "Sin imagen";
+        }
 
         // Nombre
         let celdaNombre = document.createElement("td");
@@ -79,7 +83,7 @@ function mostrarProductos() {
 
         // Precio
         let celdaPrecio = document.createElement("td");
-        celdaPrecio.textContent = producto.precio;
+        celdaPrecio.textContent = formatearPrecio(producto.precio);
 
         // Stock
         let celdaStock = document.createElement("td");
@@ -160,7 +164,7 @@ function mostrarProductosEliminar() {
         celdaNombre.textContent = producto.nombre;
 
         let celdaPrecio = document.createElement("td");
-        celdaPrecio.textContent = producto.precio;
+        celdaPrecio.textContent = formatearPrecio(producto.precio);
 
         fila.appendChild(celdaCheck);
         fila.appendChild(celdaId);
@@ -179,6 +183,16 @@ function generarIdProducto() {
     return id;
 }
 
+function obtenerFechaActual() {
+    let fecha = new Date();
+
+    let dia = String(fecha.getDate()).padStart(2, "0");
+    let mes = String(fecha.getMonth() + 1).padStart(2, "0");
+    let ano = fecha.getFullYear();
+
+    return dia + "/" + mes + "/" + ano;
+}
+
 function agregarProducto() {
 
     let nombre = document.getElementById("nombre").value;
@@ -193,30 +207,30 @@ function agregarProducto() {
     if (nombre.trim() == "" || categoria == "" || rubro == "" ||
         descripcion.trim() == "" || precio == "" || stock == "") {
 
-        alert("Complete todos los campos obligatorios.");
+        mostrarMensaje("Complete todos los campos obligatorios.", "danger");
 
         return;
     }
 
         if (Number(precio) <= 0) {
-        alert("El precio debe ser mayor a 0.");
+        mostrarMensaje("El precio debe ser mayor a 0.", "danger");
         return;
     }
 
     if (Number(stock) <= 0 || !Number.isInteger(Number(stock))) {
-        alert("El stock debe ser un número entero mayor a 0.");
+        mostrarMensaje("El stock debe ser un número entero mayor a 0.", "danger");
         return;
     }
 
     if (descripcion.length < 10) {
-        alert("La descripción debe tener al menos 10 caracteres.");
+        mostrarMensaje("La descripción debe tener al menos 10 caracteres.", "danger");
         return;
     }
 
     let imagenPrincipal = document.getElementById("imagenPrincipal");
 
     if (imagenPrincipal.files.length == 0) {
-        alert("Debe seleccionar una imagen principal.");
+        mostrarMensaje("Debe seleccionar una imagen principal.", "warning");
         return;
     }
     let imagen = URL.createObjectURL(imagenPrincipal.files[0]);
@@ -243,7 +257,7 @@ function agregarProducto() {
         stock,
         peso,
         dimensiones,
-        "12/09/2026",
+        obtenerFechaActual(),
         imagen,
         imagenesAdicionales
     );
@@ -253,7 +267,7 @@ function agregarProducto() {
     mostrarProductos();
     mostrarProductosEliminar();
 
-    alert("Producto agregado correctamente.");
+    mostrarMensaje("Producto agregado correctamente.", "success");
 
     document.getElementById("formAgregar").reset();
 
@@ -285,8 +299,13 @@ function cargarProducto(id) {
 
             let imagenActualMod = document.getElementById("imagenActualMod");
 
-            imagenActualMod.src = productoModificar.imagen;
-            imagenActualMod.style.display = "block";
+            if (productoModificar.imagen != "") {
+                imagenActualMod.src = productoModificar.imagen;
+                imagenActualMod.style.display = "block";
+            } else {
+                imagenActualMod.src = "";
+                imagenActualMod.style.display = "none";
+            }
 
             let tablaImagenesAdicionales = document.getElementById("imagenesAdicionalesMod");
 
@@ -360,34 +379,52 @@ function guardarCambios() {
 
     if (productoModificar == null) {
 
-        alert("No hay ningún producto seleccionado.");
+        mostrarMensaje("No hay ningún producto seleccionado.", "warning");
 
         return;
     }
 
-    productoModificar.nombre =
-        document.getElementById("nombre-mod").value;
+    let nombreMod = document.getElementById("nombre-mod").value;
+    let categoriaMod = document.getElementById("categoria-mod").value;
+    let rubroMod = document.getElementById("rubro-mod").value;
+    let descripcionMod = document.getElementById("descripcion-mod").value;
+    let precioMod = document.getElementById("precio-mod").value;
+    let stockMod = document.getElementById("stock-mod").value;
 
-    productoModificar.categoria =
-        document.getElementById("categoria-mod").value;
+    if (nombreMod.trim() == "" || categoriaMod == "" || rubroMod == "" ||
+        descripcionMod.trim() == "" || precioMod == "" || stockMod == "") {
 
-    productoModificar.rubro =
-        document.getElementById("rubro-mod").value;
+        mostrarMensaje("Complete todos los campos obligatorios.", "danger");
+        return;
+    }
 
-    productoModificar.descripcion =
-        document.getElementById("descripcion-mod").value;
+    if (Number(precioMod) <= 0) {
+        mostrarMensaje("El precio debe ser mayor a 0.", "danger");
+        return;
+    }
 
-    productoModificar.precio =
-        document.getElementById("precio-mod").value;
+    if (Number(stockMod) <= 0 || !Number.isInteger(Number(stockMod))) {
+        mostrarMensaje("El stock debe ser un número entero mayor a 0.", "danger");
+        return;
+    }
 
-    productoModificar.stock =
-        document.getElementById("stock-mod").value;
+    if (descripcionMod.length < 10) {
+       mostrarMensaje("La descripción debe tener al menos 10 caracteres.", "danger");
+        return;
+    }
 
-    productoModificar.peso =
-        document.getElementById("peso-mod").value;
+    productoModificar.nombre = nombreMod;
+    productoModificar.categoria = categoriaMod;
+    productoModificar.rubro = rubroMod;
+    productoModificar.descripcion = descripcionMod;
+    productoModificar.precio = precioMod;
+    productoModificar.stock = stockMod;
 
-    productoModificar.dimensiones =
-        document.getElementById("dimensiones-mod").value;
+        productoModificar.peso =
+            document.getElementById("peso-mod").value;
+
+        productoModificar.dimensiones =
+            document.getElementById("dimensiones-mod").value;
 
     let checksEliminarImagenes =
     document.querySelectorAll("#imagenesAdicionalesMod input[type='checkbox']:checked");
@@ -410,10 +447,23 @@ function guardarCambios() {
         productoModificar.imagenesAdicionales.push(nuevaImagen);
     }
 }
+        let eliminarImgPrinc = document.getElementById("eliminarImgPrinc");
+
+        if (eliminarImgPrinc.checked) {
+            productoModificar.imagen = "";
+        }
+
+        let nuevaImagenPrincipalMod = document.getElementById("nuevaImagenPrincipalMod");
+
+        if (nuevaImagenPrincipalMod.files.length > 0) {
+            productoModificar.imagen = URL.createObjectURL(nuevaImagenPrincipalMod.files[0]);
+        } else if (eliminarImgPrinc.checked) {
+            productoModificar.imagen = "";
+        }
     mostrarProductos();
     mostrarProductosEliminar();
 
-    alert("Producto modificado correctamente.");
+    mostrarMensaje("Producto modificado correctamente.", "success");
 
     limpiarFormularioModificar();
 }
@@ -444,6 +494,8 @@ function guardarCambios() {
 
 function eliminarProducto(id) {
 
+    let encontrado = false;
+
     let confirmar = confirm(
         "¿Está seguro de eliminar este producto?"
     );
@@ -455,14 +507,21 @@ function eliminarProducto(id) {
             if (productos[i].id == id) {
 
                 productos.splice(i, 1);
+                encontrado = true;
 
                 break;
             }
         }
 
-        mostrarProductos();
-        mostrarProductosEliminar();
-        alert("Producto eliminado correctamente.");
+        if (encontrado) {
+            mostrarProductos();
+            mostrarProductosEliminar();
+            limpiarFormularioModificar();
+            document.getElementById("idEliminar").value = "";
+            mostrarMensaje("Producto eliminado correctamente.", "success");
+        } else {
+            mostrarMensaje("No se encontró ningún producto con ese ID.", "danger");
+        }
     }
 }
 
@@ -549,7 +608,7 @@ btnEliminarPorId.addEventListener("click", function() {
     let id = document.getElementById("idEliminar").value;
 
     if (id == "") {
-        alert("Ingrese un ID para eliminar.");
+        mostrarMensaje("Ingrese un ID para eliminar.", "warning");
         return;
     }
 
@@ -563,7 +622,7 @@ let btnEliminarSeleccionados = document.getElementById("btnEliminarSeleccionados
     let checks = document.querySelectorAll("#tablaEliminarProductos input[type='checkbox']:checked");
 
     if (checks.length == 0) {
-        alert("Seleccione al menos un producto.");
+        mostrarMensaje("Seleccione al menos un producto.", "warning");
         return;
     }
 
@@ -585,7 +644,41 @@ let btnEliminarSeleccionados = document.getElementById("btnEliminarSeleccionados
 
         mostrarProductos();
         mostrarProductosEliminar();
-
-        alert("Productos eliminados correctamente.");
+        limpiarFormularioModificar();
+        mostrarMensaje("Productos eliminados correctamente.", "success");
     }
+});
+
+    function formatearPrecio(precio) {
+    return "$" + Number(precio).toLocaleString("es-AR");
+}
+
+function mostrarMensaje(texto, tipo) {
+    let modalTitulo = document.getElementById("modalMensajeTitulo");
+    let modalTexto = document.getElementById("modalMensajeTexto");
+    let modalContenido = document.querySelector("#modalMensaje .modal-content");
+
+    modalTitulo.textContent = tipo == "success" ? "Correcto" : "Atención";
+    modalTexto.textContent = texto;
+
+    modalContenido.classList.remove("border-success", "border-danger", "border-warning", "border-info");
+
+    if (tipo == "success") {
+        modalContenido.classList.add("border", "border-success");
+    } else if (tipo == "danger") {
+        modalContenido.classList.add("border", "border-danger");
+    } else if (tipo == "warning") {
+        modalContenido.classList.add("border", "border-warning");
+    } else {
+        modalContenido.classList.add("border", "border-info");
+    }
+
+    let modal = new bootstrap.Modal(document.getElementById("modalMensaje"));
+    modal.show();
+}
+
+let btnCancelarEdicion = document.getElementById("btnCancelarEdicion");
+
+btnCancelarEdicion.addEventListener("click", function() {
+    limpiarFormularioModificar();
 });

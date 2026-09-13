@@ -46,7 +46,16 @@ function obtenerFechaActual() {
 }
 
     function formatearPrecio(precio) {
-    return "$" + Number(precio).toLocaleString("es-AR");
+        if (typeof precio === 'number') {
+        return "$" + precio.toLocaleString("es-AR");
+    }
+        let precioLimpio = precio.toString().replace(/\./g, '').replace(',', '.');
+
+        let numero = Number(precioLimpio);
+
+        if (isNaN(numero)) return "$ 0"; // Por si viene vacío o inválido
+
+        return "$" + numero.toLocaleString("es-AR");
 }
 
 function mostrarMensaje(texto, tipo) {
@@ -84,6 +93,16 @@ function mostrarProductos() {
 
     tabla.innerHTML = "";
 
+            if (productos.length === 0) {
+            let filaVacia = document.createElement("tr");
+            let celdaVacia = document.createElement("td");
+            celdaVacia.colSpan = 9;
+            celdaVacia.textContent = "No tenés productos publicados actualmente.";
+            celdaVacia.className = "text-center text-muted py-4";
+            filaVacia.appendChild(celdaVacia);
+            tabla.appendChild(filaVacia);
+            return;
+        }
     for (let i = 0; i < productos.length; i++) {
 
         let producto = productos[i];
@@ -183,6 +202,17 @@ function mostrarProductosEliminar() {
 
     tablaEliminar.innerHTML = "";
 
+            if (productos.length === 0) {
+            let filaVacia = document.createElement("tr");
+            let celdaVacia = document.createElement("td");
+            celdaVacia.colSpan = 4;
+            celdaVacia.textContent = "No hay productos disponibles para eliminar";
+            celdaVacia.className = "text-center text-muted py-4";
+            filaVacia.appendChild(celdaVacia);
+            tablaEliminar.appendChild(filaVacia);
+            return;
+        }
+
     for (let i = 0; i < productos.length; i++) {
 
         let producto = productos[i];
@@ -223,7 +253,8 @@ function agregarProducto() {
     let categoria = document.getElementById("categoria").value;
     let rubro = document.getElementById("rubro").value;
     let descripcion = document.getElementById("descripcion").value;
-    let precio = document.getElementById("precio").value;
+    let precioInput = document.getElementById("precio").value;
+    let precio = Number(precioInput.toString().replace(/\./g, '').replace(',', '.'));
     let stock = document.getElementById("stock").value;
     let peso = document.getElementById("peso").value;
     let dimensiones = document.getElementById("dimensiones").value;
@@ -413,7 +444,8 @@ function guardarCambios() {
     let categoriaMod = document.getElementById("categoria-mod").value;
     let rubroMod = document.getElementById("rubro-mod").value;
     let descripcionMod = document.getElementById("descripcion-mod").value;
-    let precioMod = document.getElementById("precio-mod").value;
+    let precioModInput = document.getElementById("precio-mod").value;
+    let precioMod = Number(precioModInput.toString().replace(/\./g, '').replace(',', '.'));
     let stockMod = document.getElementById("stock-mod").value;
 
     if (nombreMod.trim() == "" || categoriaMod == "" || rubroMod == "" ||
@@ -683,4 +715,14 @@ let btnCancelarEdicion = document.getElementById("btnCancelarEdicion");
 
 btnCancelarEdicion.addEventListener("click", function() {
     limpiarFormularioModificar();
+});
+
+mostrarProductos();
+mostrarProductosEliminar();
+
+document.addEventListener("DOMContentLoaded", function() {
+    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
 });

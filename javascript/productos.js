@@ -1,3 +1,11 @@
+//Modelo y variables globales
+
+
+let productos = [];
+
+let contadorProductos = 1;
+
+let productoModificar = null; // VARIABLE PARA SABER QUÉ PRODUCTO ESTAMOS MODIFICANDO
 
 // FUNCIÓN CONSTRUCTORA PRODUCTO
 
@@ -19,24 +27,55 @@ function Producto(id, nombre, categoria, rubro, descripcion,
     this.imagenesAdicionales = imagenesAdicionales;
 }
 
+//funciones auxiliares
+
+function generarIdProducto() {
+    let id = "PROD-2026-" + String(contadorProductos).padStart(3, "0");
+    contadorProductos++;
+    return id;
+}
+
+function obtenerFechaActual() {
+    let fecha = new Date();
+
+    let dia = String(fecha.getDate()).padStart(2, "0");
+    let mes = String(fecha.getMonth() + 1).padStart(2, "0");
+    let ano = fecha.getFullYear();
+
+    return dia + "/" + mes + "/" + ano;
+}
+
+    function formatearPrecio(precio) {
+    return "$" + Number(precio).toLocaleString("es-AR");
+}
+
+function mostrarMensaje(texto, tipo) {
+    let modalTitulo = document.getElementById("modalMensajeTitulo");
+    let modalTexto = document.getElementById("modalMensajeTexto");
+    let modalContenido = document.querySelector("#modalMensaje .modal-content");
+
+    modalTitulo.textContent = tipo == "success" ? "Correcto" : "Atención";
+    modalTexto.textContent = texto;
+
+    modalContenido.classList.remove("border-success", "border-danger", "border-warning", "border-info");
+
+    if (tipo == "success") {
+        modalContenido.classList.add("border", "border-success");
+    } else if (tipo == "danger") {
+        modalContenido.classList.add("border", "border-danger");
+    } else if (tipo == "warning") {
+        modalContenido.classList.add("border", "border-warning");
+    } else {
+        modalContenido.classList.add("border", "border-info");
+    }
+
+    let modal = new bootstrap.Modal(document.getElementById("modalMensaje"));
+    modal.show();
+}
 
 
-// ARRAY DE PRODUCTOS
 
-
-let productos = [];
-
-let contadorProductos = 1;
-
-// VARIABLE PARA SABER QUÉ PRODUCTO
-// ESTAMOS MODIFICANDO
-
-
-let productoModificar = null;
-
-
-
-// MOSTRAR PRODUCTOS EN LA TABLA
+// MOSTRAR PRODUCTOS EN LA TABLA/pantalla
 
 
 function mostrarProductos() {
@@ -175,23 +214,8 @@ function mostrarProductosEliminar() {
     }
 }
 
-// AGREGAR PRODUCTO
 
-function generarIdProducto() {
-    let id = "PROD-2026-" + String(contadorProductos).padStart(3, "0");
-    contadorProductos++;
-    return id;
-}
-
-function obtenerFechaActual() {
-    let fecha = new Date();
-
-    let dia = String(fecha.getDate()).padStart(2, "0");
-    let mes = String(fecha.getMonth() + 1).padStart(2, "0");
-    let ano = fecha.getFullYear();
-
-    return dia + "/" + mes + "/" + ano;
-}
+//Agregar Productos
 
 function agregarProducto() {
 
@@ -274,6 +298,7 @@ function agregarProducto() {
 }
 
 
+//Modificar productos
 
 // CARGAR PRODUCTO PARA MODIFICAR
 
@@ -467,7 +492,8 @@ function guardarCambios() {
 
     limpiarFormularioModificar();
 }
-    function limpiarFormularioModificar() {
+
+function limpiarFormularioModificar() {
 
     document.getElementById("tituloModificar").textContent =
         "Seleccione un producto para modificar";
@@ -487,6 +513,9 @@ function guardarCambios() {
 
     productoModificar = null;
 }
+
+
+//Eliminar productos
 
 
 // ELIMINAR PRODUCTO
@@ -526,9 +555,10 @@ function eliminarProducto(id) {
 }
 
 
-// ==========================================
+//Eventos
+
 // EVENTO PARA AGREGAR
-// ==========================================
+
 
 let formularioAgregar =
     document.querySelector("#sección-agregar form");
@@ -541,9 +571,9 @@ formularioAgregar.addEventListener("submit", function(event) {
 });
 
 
-// ==========================================
+
 // EVENTO PARA MODIFICAR
-// ==========================================
+
 
 let formularioModificar =
     document.querySelector("#sección-modificar form");
@@ -556,9 +586,8 @@ formularioModificar.addEventListener("submit", function(event) {
 });
 
 
-// ==========================================
 // EVENTOS DE LOS BOTONES DE LA TABLA
-// ==========================================
+
 
 let tablaProductos =
     document.querySelector("#sección-misproductos tbody");
@@ -649,33 +678,6 @@ let btnEliminarSeleccionados = document.getElementById("btnEliminarSeleccionados
     }
 });
 
-    function formatearPrecio(precio) {
-    return "$" + Number(precio).toLocaleString("es-AR");
-}
-
-function mostrarMensaje(texto, tipo) {
-    let modalTitulo = document.getElementById("modalMensajeTitulo");
-    let modalTexto = document.getElementById("modalMensajeTexto");
-    let modalContenido = document.querySelector("#modalMensaje .modal-content");
-
-    modalTitulo.textContent = tipo == "success" ? "Correcto" : "Atención";
-    modalTexto.textContent = texto;
-
-    modalContenido.classList.remove("border-success", "border-danger", "border-warning", "border-info");
-
-    if (tipo == "success") {
-        modalContenido.classList.add("border", "border-success");
-    } else if (tipo == "danger") {
-        modalContenido.classList.add("border", "border-danger");
-    } else if (tipo == "warning") {
-        modalContenido.classList.add("border", "border-warning");
-    } else {
-        modalContenido.classList.add("border", "border-info");
-    }
-
-    let modal = new bootstrap.Modal(document.getElementById("modalMensaje"));
-    modal.show();
-}
 
 let btnCancelarEdicion = document.getElementById("btnCancelarEdicion");
 

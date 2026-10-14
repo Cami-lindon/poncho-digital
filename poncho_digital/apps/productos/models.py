@@ -7,9 +7,6 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nombre
 
-    def __str__(self):
-        return self.nombre
-
 
 class Producto(models.Model):
 

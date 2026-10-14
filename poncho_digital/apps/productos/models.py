@@ -12,7 +12,6 @@ class Producto(models.Model):
 
     nombre = models.CharField(max_length=150)
     categoria = models.ForeignKey(Categoria,on_delete=models.PROTECT,related_name="productos")
-    rubro = models.ForeignKey(Rubro,on_delete=models.PROTECT,related_name="productos")
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=12, decimal_places=2)
     cantidad_stock = models.PositiveIntegerField(default=0)

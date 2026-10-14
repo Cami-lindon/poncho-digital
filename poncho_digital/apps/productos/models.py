@@ -7,10 +7,6 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nombre
 
-
-class Rubro(models.Model):
-    nombre = models.CharField(max_length=100, unique=True)
-
     def __str__(self):
         return self.nombre
 

@@ -14,6 +14,10 @@ import os
 from decouple import config
 from pathlib import Path
 
+from django.conf.global_settings import AUTH_USER_MODEL
+
+from apps import usuarios
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -106,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTH_USER_MODEL = 'usuarios.Usuario'
 
 
 # Internationalization

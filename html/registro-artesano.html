@@ -130,6 +130,32 @@
                                         >
                                     </div>
 
+                                    <div class="col-12 col-md-6">
+                                        <label for="dni" class="form-label">DNI</label>
+                                        <input
+                                            type="text"
+                                            name="dni"
+                                            id="dni"
+                                            class="form-control"
+                                            inputmode="numeric"
+                                            maxlength="8"
+                                            required
+                                        >
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
+                                        <label for="fechaNacimiento" class="form-label">
+                                            Fecha de nacimiento
+                                        </label>
+                                        <input
+                                            type="date"
+                                            name="fechaNacimiento"
+                                            id="fechaNacimiento"
+                                            class="form-control"
+                                            required
+                                        >
+                                    </div>
+
                                 </div>
 
                                 <div class="row g-3">
@@ -154,15 +180,32 @@
                                         >
                                     </div>
 
-                                    <div class="col-12">
+
+                                    <div class="col-12 col-md-6">
+                                        <label for="provincia" class="form-label">Provincia</label>
+                                        <select
+                                            name="provincia"
+                                            id="provincia"
+                                            class="form-select"
+                                            required
+                                        >
+                                            <option value="">Cargando provincias...</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
                                         <label for="localidad" class="form-label">Localidad</label>
-                                        <input
-                                            type="text"
+                                        <select
                                             name="localidad"
                                             id="localidad"
-                                            class="form-control"
+                                            class="form-select"
+                                            disabled
+                                            required
                                         >
+                                            <option value="">Primero seleccioná una provincia</option>
+                                        </select>
                                     </div>
+
 
                                 </div>
 

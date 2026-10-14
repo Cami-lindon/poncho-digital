@@ -85,6 +85,132 @@ formulario.addEventListener("submit", function(event) {
         return;
     }
 
+    const dni = document.querySelector("#dni");
+
+    if (!/^\d{7,8}$/.test(dni.value.trim())) {
+        alert("Ingresá un DNI válido de 7 u 8 números.");
+        return;
+    }
+
+    const fechaNacimiento = document.querySelector("#fechaNacimiento");
+    const nacimiento = new Date(fechaNacimiento.value + "T00:00:00");
+    const hoy = new Date();
+
+    if (
+        !fechaNacimiento.value ||
+        Number.isNaN(nacimiento.getTime()) ||
+        nacimiento > hoy
+    ) {
+        alert("Ingresá una fecha de nacimiento válida.");
+        return;
+    }
+
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+
+    const aunNoCumplio =
+        hoy.getMonth() < nacimiento.getMonth() ||
+        (
+            hoy.getMonth() === nacimiento.getMonth() &&
+            hoy.getDate() < nacimiento.getDate()
+        );
+
+    if (aunNoCumplio) {
+        edad--;
+    }
+
+    if (edad < 18) {
+        alert("Debés ser mayor de edad para solicitar un stand.");
+        return;
+    }
+
 
 alert("Solicitud enviada correctamente.");
 });
+
+
+const provincia = document.querySelector("#provincia");
+const localidad = document.querySelector("#localidad");
+
+const API_GEOREF = "https://apis.datos.gob.ar/georef/api";
+
+function limpiarLista(select, mensaje) {
+    select.innerHTML = "";
+    select.add(new Option(mensaje, ""));
+}
+
+async function cargarProvincias() {
+    limpiarLista(provincia, "Cargando provincias...");
+    provincia.disabled = true;
+
+    try {
+        const respuesta = await fetch(
+            `${API_GEOREF}/provincias?orden=nombre&max=100`
+        );
+
+        if (!respuesta.ok) {
+            throw new Error("No se pudieron cargar las provincias.");
+        }
+
+        const datos = await respuesta.json();
+
+        limpiarLista(provincia, "Seleccioná una provincia");
+
+        datos.provincias.forEach(function (item) {
+            provincia.add(new Option(item.nombre, item.nombre));
+        });
+
+        provincia.disabled = false;
+    } catch (error) {
+        limpiarLista(provincia, "Error al cargar las provincias");
+        console.error(error);
+    }
+}
+
+provincia.addEventListener("change", async function () {
+    limpiarLista(localidad, "Cargando localidades...");
+    localidad.disabled = true;
+
+    if (provincia.value === "") {
+        limpiarLista(
+            localidad,
+            "Primero seleccioná una provincia"
+        );
+        return;
+    }
+
+    try {
+        const url =
+            `${API_GEOREF}/localidades` +
+            `?provincia=${encodeURIComponent(provincia.value)}` +
+            "&orden=nombre&max=5000";
+
+        const respuesta = await fetch(url);
+
+        if (!respuesta.ok) {
+            throw new Error("No se pudieron cargar las localidades.");
+        }
+
+        const datos = await respuesta.json();
+
+        limpiarLista(localidad, "Seleccioná una localidad");
+
+        datos.localidades.forEach(function (item) {
+            localidad.add(new Option(item.nombre, item.nombre));
+        });
+
+        if (datos.localidades.length === 0) {
+            limpiarLista(
+                localidad,
+                "No se encontraron localidades"
+            );
+            return;
+        }
+
+        localidad.disabled = false;
+    } catch (error) {
+        limpiarLista(localidad, "Error al cargar las localidades");
+        console.error(error);
+    }
+});
+
+cargarProvincias();

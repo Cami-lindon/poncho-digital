@@ -27,7 +27,7 @@ class Producto(models.Model):
     dimensiones = models.CharField(max_length=100, blank=True)
     imagen_principal = models.FileField()
     fecha_publicacion= models.DateTimeField(auto_now_add=True)
-    artesano = models.ForeignKey("artesanos.Artesano",on_delete=models.PROTECT,related_name="productos")
+    artesano = models.ForeignKey("artesanos.Artesano",on_delete=models.CASCADE,related_name="productos")
 
     def __str__(self):
         return self.nombre

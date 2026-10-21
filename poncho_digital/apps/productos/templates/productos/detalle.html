@@ -1,0 +1,42 @@
+{% extends "base/base.html" %}
+
+{% block titulo %}Detalle del producto{% endblock %}
+
+{% block contenido_principal %}
+<section class="container my-4">
+    <h2 class="principal">{{ producto.nombre }}</h2>
+</section>
+
+<section class="container mb-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+            <div class="row g-4">
+                <div class="col-md-5">
+                    {% if producto.imagen_principal %}
+                        <img src="{{ producto.imagen_principal.url }}" alt="{{ producto.nombre }}" class="img-fluid rounded">
+                    {% endif %}
+                </div>
+
+                <div class="col-md-7">
+                    <p><strong>ID:</strong> {{ producto.pk }}</p>
+                    <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
+                    <p><strong>Artesano:</strong> {{ producto.artesano }}</p>
+                    <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+                    <p>
+                        <strong>Peso:</strong>
+                        {% if producto.peso_kg %}{{ producto.peso_kg }} kg{% else %}No especificado{% endif %}
+                    </p>
+                    <p><strong>Fecha de publicación:</strong> {{ producto.fecha_publicacion|date:"d/m/Y H:i" }}</p>
+                    <p><strong>Descripción:</strong><br>{{ producto.descripcion }}</p>
+
+                    <div class="mt-4 d-flex gap-2">
+                        <a href="{% url 'productos:editar_producto' producto.pk %}" class="btn btn-primary">Modificar</a>
+                        <a href="{% url 'productos:eliminar_producto' producto.pk %}" class="btn btn-danger">Eliminar</a>
+                        <a href="{% url 'productos:lista_productos' %}" class="btn btn-secondary">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

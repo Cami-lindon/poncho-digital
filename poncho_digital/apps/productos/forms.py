@@ -12,7 +12,6 @@ class ProductoForm(forms.ModelForm):
             "precio",
             "peso_kg",
             "imagen_principal",
-            "artesano",
         ]
 
     def __init__(self, *args, **kwargs):

@@ -37,16 +37,24 @@
                                     <a class="nav-link" href="{% url 'artesanos:registro_artesano' %}">Registro de Artesanos</a>
                                 </li>
 
-                                {% comment %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'productos:productos' %}">Gestión de Productos</a>
+                                    <a class="nav-link" href="{% url 'productos:lista_productos' %}">Gestión de Productos</a>
                                 </li>
-                                {% endcomment %}
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Mapa del predio</a>
                                 </li>
                             </ul>
+                            <span class="navbar-text ms-auto">
+                                {% if user.is_authenticated %}
+                                    {{ user.username }}
+                                    <a class="btn btn-outline-success me-2"
+                                       href="{% url 'usuario:logout' %}">Cerrar sesión</a>
+                                    {% else %}
+                                    <a class="btn btn-outline-success me-2"
+                                       href="{% url 'usuario:login' %}">Iniciar sesión</a>
+                                {% endif %}
+                            </span>
                         </div>
                     </div>
                 </nav>

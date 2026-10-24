@@ -6,6 +6,11 @@
     --platinum: #f1f1f1ff;
 }
 
+body {
+    font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--platinum);
+}
+
 footer {
     background-color: var(--space-indigo);
     color: var(--platinum);
@@ -18,6 +23,3 @@ footer p {
     margin: 0;
 }
 
-body {
-    background-color: var(--platinum);
-}

@@ -38,7 +38,7 @@ def crear_producto(request):
 @permission_required("productos.change_producto", raise_exception=True)
 def editar_producto(request, pk):
 
-    producto = get_object_or_404(Producto, pk=pk, publicado_por=request.user)
+    producto = get_object_or_404(Producto, pk=pk)
 
     if producto.publicado_por != request.user:
         messages.error(request, "No podés modificar este producto.")
@@ -61,10 +61,10 @@ def editar_producto(request, pk):
 @login_required
 @permission_required("productos.delete_producto", raise_exception=True)
 def eliminar_producto(request, pk):
-    producto = get_object_or_404(Producto, pk=pk, publicado_por=request.user)
+    producto = get_object_or_404(Producto, pk=pk)
 
     if producto.publicado_por != request.user:
-        messages.error(request, "No podés modificar este producto.")
+        messages.error(request, "No podés eliminar este producto.")
         return redirect("productos:lista_productos")
 
     if request.method == "POST":

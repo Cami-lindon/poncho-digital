@@ -60,6 +60,12 @@
                     </div>
                 </nav>
         </header>
+                {% if messages %}
+            {% for mensaje in messages %}
+                <div class="alert alert-warning">{{ mensaje }}</div>
+            {% endfor %}
+        {% endif %}
+
         <div>{% block contenido_principal %} {% endblock %}</div>
         <footer>
             <p>Poncho Digital / Fiesta Nacional e Internacional del Poncho</p>

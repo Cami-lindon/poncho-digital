@@ -20,7 +20,7 @@
                 <div class="col-md-7">
                     <p><strong>ID:</strong> {{ producto.pk }}</p>
                     <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
-                    <p><strong>Artesano:</strong> {{ producto.artesano }}</p>
+                    <p><strong>Publicado por:</strong> {{ producto.publicado_por.get_full_name|default:producto.publicado_por.username }}</p>
                     <p><strong>Precio:</strong> ${{ producto.precio }}</p>
                     <p>
                         <strong>Peso:</strong>

@@ -1,0 +1,130 @@
+/* productos.css: estilos del proyecto Poncho Digital */
+
+/* ===== Paleta ===== */
+:root {
+    --powder-blue: #b1bdddff;
+    --space-indigo: #29324fff;
+    --clay-soil: #734435ff;
+    --pearl-beige: #dbcba0ff;
+    --platinum: #f1f1f1ff;
+}
+
+/* ===== Navegación y encabezado ===== */
+.navbar-celeste {
+    background-color: var(--powder-blue);
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.navbar-celeste .nav-link {
+    color: var(--space-indigo);
+}
+
+.navbar-celeste .nav-link:hover,
+.navbar-celeste .nav-link.active {
+    color: var(--clay-soil);
+    font-weight: bold;
+}
+
+h1 {
+    background-color: var(--space-indigo);
+    color: white;
+    padding: 30px;
+    margin-bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* ===== Textos ===== */
+body {
+    color: var(--space-indigo);
+}
+
+.principal {
+    color: var(--clay-soil);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+section h3 {
+    color: var(--clay-soil);
+    font-weight: 700;
+}
+
+label,
+.form-label {
+    color: var(--space-indigo) !important;
+    font-weight: 700 !important;
+}
+
+/* ===== Tarjetas, fieldsets y botones ===== */
+.card {
+    background-color: var(--pearl-beige);
+    border: 2px solid var(--powder-blue) !important;
+}
+
+fieldset {
+    background-color: var(--pearl-beige);
+    border: 2px solid var(--powder-blue);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(41, 50, 79, 0.05);
+}
+
+legend {
+    font-weight: bold;
+    color: var(--clay-soil);
+    padding: 0 6px;
+    font-size: 1.15rem;
+}
+
+.btn-primary {
+    background-color: var(--space-indigo) !important;
+    border-color: var(--space-indigo) !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #1f263c !important;
+    border-color: #1f263c !important;
+}
+
+/* ===== Tablas ===== */
+table {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 4px rgba(41, 50, 79, 0.05);
+}
+
+.table thead th {
+    background-color: var(--space-indigo) !important;
+    color: #ffffff !important;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--platinum);
+    color: var(--space-indigo);
+    vertical-align: middle;
+}
+
+tr:hover {
+    background-color: rgba(177, 189, 221, 0.15);
+}
+
+.table-bordered,
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid var(--powder-blue) !important;
+}

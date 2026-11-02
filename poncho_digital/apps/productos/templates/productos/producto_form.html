@@ -1,8 +1,12 @@
 {% extends "base/base.html" %}
-
+{% load static %}
 {% block titulo %}
     {% if producto %}Modificar producto{% else %}Agregar producto{% endif %}
 {% endblock %}
+
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/productos.css' %}">
+    {% endblock %}
 
 {% block contenido_principal %}
 <section class="container my-4">

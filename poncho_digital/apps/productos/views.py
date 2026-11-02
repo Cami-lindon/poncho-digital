@@ -1,8 +1,10 @@
 from django.contrib.auth.decorators import login_required, permission_required
+from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Producto
 from .forms import ProductoForm
+from ..artesanos.models import Artesano
 
 
 @login_required
@@ -75,3 +77,18 @@ def eliminar_producto(request, pk):
         "productos/producto_confirmar_eliminacion.html",
         {"producto": producto},
     )
+
+
+def catalogo_productos(request):
+    productos = Producto.objects.all()
+    return render(request, 'productos/catalogo_productos.html', {'productos': productos})
+
+
+def detalle_artesano(request, usuario_id):
+    artesano = get_object_or_404(Artesano, usuario_id=usuario_id,)
+
+    solicitud = (artesano.solicitudes.filter(estado="aprobada").order_by("-pk").first())
+    if solicitud is None:
+        raise Http404
+
+    return render(request, "productos/detalle_artesano.html", {"artesano": artesano, "solicitud": solicitud, },)

@@ -27,10 +27,6 @@
                     <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
                     <p><strong>Publicado por:</strong> {{ producto.publicado_por.get_full_name|default:producto.publicado_por.username }}</p>
                     <p><strong>Precio:</strong> ${{ producto.precio }}</p>
-                    <p>
-                        <strong>Peso:</strong>
-                        {% if producto.peso_kg %}{{ producto.peso_kg }} kg{% else %}No especificado{% endif %}
-                    </p>
                     <p><strong>Fecha de publicación:</strong> {{ producto.fecha_publicacion|date:"d/m/Y H:i" }}</p>
                     <p><strong>Descripción:</strong><br>{{ producto.descripcion }}</p>
 

@@ -10,7 +10,6 @@ class ProductoForm(forms.ModelForm):
             "categoria",
             "descripcion",
             "precio",
-            "peso_kg",
             "imagen_principal",
         ]
 

@@ -13,7 +13,6 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=150)
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT, related_name="productos")
     descripcion = models.TextField()
-    precio = models.DecimalField(max_digits=12, decimal_places=2)
     imagen_principal = models.FileField(upload_to="productos/")
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
     publicado_por = models.ForeignKey('usuarios.Usuario', on_delete=models.CASCADE, related_name='productos_publicados')

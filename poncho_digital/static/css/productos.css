@@ -27,8 +27,9 @@
 }
 
 h1 {
+    font-family: 'Lora', Georgia, serif;
     background-color: var(--space-indigo);
-    color: white;
+    color: var(--pearl-beige);
     padding: 30px;
     margin-bottom: 0;
     text-align: center;

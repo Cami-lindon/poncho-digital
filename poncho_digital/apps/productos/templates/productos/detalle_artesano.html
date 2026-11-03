@@ -1,5 +1,8 @@
 {% extends "base/base.html" %}
-
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/productos.css' %}">
+{% endblock %}
 {% block titulo %}Detalle de Artesano{% endblock %}
 
 {% block contenido_principal %}

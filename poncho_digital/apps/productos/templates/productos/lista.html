@@ -42,7 +42,7 @@
                                 {% endif %}
                             </td>
                             <td>{{ producto.nombre }}</td>
-                            <td>{{ producto.categoria }}</td>
+    |                       <td>{{ producto.get_categoria_display }}</td>
                             <td>{{ producto.fecha_publicacion|date:"d/m/Y" }}</td>
                             <td>
                                 <a href="{% url 'productos:detalle_producto' producto.pk %}" class="btn btn-sm btn-outline-primary">Ver</a>

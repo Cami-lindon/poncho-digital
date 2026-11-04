@@ -128,3 +128,59 @@ tr:hover {
 .table-bordered td {
     border: 1px solid var(--powder-blue) !important;
 }
+
+/* ===== Reportes ===== */
+
+.reportes-card {
+    max-width: 850px;
+    padding: 2rem;
+    margin: 0 auto;
+    background-color: var(--platinum);
+    border: 1px solid var(--powder-blue);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(41, 50, 79, 0.12);
+}
+
+.reportes-titulo {
+    color: var(--platinum);
+    text-align: center;
+}
+
+.reportes-lista .list-group-item {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    padding: 1rem;
+    color: var(--space-indigo);
+    background-color: white;
+    border-color: var(--powder-blue);
+}
+
+.reportes-lista .list-group-item span {
+    display: block;
+    flex: 1 1 auto;
+}
+
+.reportes-botones {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.btn-pdf {
+    color: white;
+    background-color: var(--clay-soil);
+    border-color: var(--clay-soil);
+}
+
+.btn-excel {
+    color: var(--space-indigo);
+    background-color: var(--powder-blue);
+    border-color: var(--powder-blue);
+}
+

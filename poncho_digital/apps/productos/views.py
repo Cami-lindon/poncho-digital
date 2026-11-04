@@ -795,7 +795,7 @@ def reporte_productos_por_artesano_excel(request):
             hoja.append([
                 producto.nombre,
                 producto.get_categoria_display(),
-                producto.fecha_publicacion
+                producto.fecha_publicacion.date()
             ])
 
             hoja.cell(

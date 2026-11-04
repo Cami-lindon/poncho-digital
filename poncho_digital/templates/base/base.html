@@ -41,6 +41,12 @@
                                     <a class="nav-link" href="{% url 'productos:lista_productos' %}">Gestión de Productos</a>
                                 </li>
                                 {% endif %}
+
+                                {% if request.user.is_authenticated and request.user.is_staff %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'reportes:lista_reportes' %}">Reportes</a>
+                                </li>
+                                {% endif %}
                             </ul>
                             <span class="navbar-text ms-auto">
                                 {% if user.is_authenticated %}

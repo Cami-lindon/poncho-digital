@@ -10,4 +10,5 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="base/home.html"), name="home"),
     path("artesanos/", include("apps.artesanos.urls"),),
     path("productos/", include("apps.productos.urls", namespace='productos')),
+    path("reportes/", include("apps.productos.urls_reportes"),name="reportes"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

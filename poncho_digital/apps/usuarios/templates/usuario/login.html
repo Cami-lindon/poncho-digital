@@ -3,10 +3,11 @@
 {% block titulo %}Inicio Sesión{% endblock %}
 {% block css %} <link rel="stylesheet" href="{% static 'css/portada.css' %}"> {% endblock %}
 {% block contenido_principal %}
-    <header id="home">
-        <h1>Login de Usuario</h1>
+<main class="container">
+    <section id="home">
+        <h2>Login de Usuario</h2>
         <p>Ingrese sus credenciales para Ingresar al Sistema</p>
-    </header>
+    </section>
     <hr class="w-75">
     <br>
     {% if msj %}
@@ -24,5 +25,6 @@
         </div>
         <input type="submit" class="btn btn-primary" value="Login">
     </form>
+</main>
 {% endblock %}
 

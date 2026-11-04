@@ -7,22 +7,19 @@
 
 {% block contenido_principal %}
 <section class="container my-4">
-    <h1 class="principal">{{ solicitud.emprendimiento }}</h1>
-    <h2>{{ artesano.nombre }} {{ artesano.apellido }}</h2>
-</section>
-
-<section class="container mb-5">
-    <div class="card shadow-sm border-0">
-        <div class="card-body p-4">
-            <div class="row g-4">
-                <div class="col-md-7">
-                    <p><strong>Provincia: </strong> {{ solicitud.provincia }}</p>
-                    <p><strong>Localidad: </strong> {{ solicitud.localidad }}</p>
-                    <p><strong>Rubro: </strong> {{ solicitud.rubro }}</p>
-                    <!--stand: -->
-                </div>
-            </div>
+    <article class="card detalle-artesano shadow-sm">
+        <div class="card-header">
+            <h2 class="detalle-artesano-titulo">{{ solicitud.emprendimiento }}</h2>
+            <p class="detalle-artesano-nombre">{{ artesano.nombre }} {{ artesano.apellido }}</p>
         </div>
-    </div>
+        <div class="card-body">
+            <p>{{ solicitud.descripcion }}</p>
+            <p><strong>Provincia: </strong> {{ solicitud.provincia }}</p>
+            <p><strong>Localidad: </strong> {{ solicitud.localidad }}</p>
+            <p><strong>Rubro: </strong> {{ solicitud.rubro }}</p>
+            <p><strong>Productos: </strong> {{ solicitud.productos }}</p>
+            <p><Strong>Ubicación: </Strong>{{ solicitud.pabellon }}</p>
+        </div>
+    </article>
 </section>
 {% endblock %}

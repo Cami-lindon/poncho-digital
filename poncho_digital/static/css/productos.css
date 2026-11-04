@@ -117,3 +117,26 @@ catalogo-productos {
     object-fit: cover;
     background-color: #f5f5f5;
 }
+
+.card.detalle-artesano {
+    max-width: 720px;
+    margin-inline: auto;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.detalle-artesano .card-header {
+    background-color: #dbcba0ff;
+    padding: 24px;
+    border-bottom: 1px solid #cdbb8d;
+}
+
+.detalle-artesano .detalle-artesano-titulo {
+    font-size: 2rem;
+    color: #754c38;
+    font-weight: 700;
+}
+
+.detalle-artesano .detalle-artesano-nombre {
+    font-size: 1.20rem;
+}

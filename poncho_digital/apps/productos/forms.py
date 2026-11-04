@@ -9,7 +9,6 @@ class ProductoForm(forms.ModelForm):
             "nombre",
             "categoria",
             "descripcion",
-            "precio",
             "imagen_principal",
         ]
 

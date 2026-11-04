@@ -1,4 +1,3 @@
-
 from django.urls import path
 from . import views
 
@@ -12,6 +11,12 @@ urlpatterns = [
     ),
     path(
         "panel/",
-         views.panel_solicitudes,
-         name="panel_solicitudes"),
+        views.panel_solicitudes,
+        name="panel_solicitudes",
+    ),
+    path(
+        "panel/solicitud/<int:pk>/",
+        views.detalle_solicitud,
+        name="detalle_solicitud",
+    ),
 ]

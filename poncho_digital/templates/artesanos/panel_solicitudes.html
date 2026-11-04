@@ -33,7 +33,11 @@ Panel de solicitudes - Fiesta del Poncho
                                 {{ solicitud.artesano.apellido }}
                             </td>
 
-                            <td>{{ solicitud.emprendimiento }}</td>
+                            <td>
+                                <a href="{% url 'artesanos:detalle_solicitud' solicitud.pk %}">
+                                    {{ solicitud.emprendimiento }}
+                                </a>
+                            </td>
 
                             <td>{{ solicitud.rubro }}</td>
 

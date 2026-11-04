@@ -123,3 +123,16 @@ class SolicitudForm(forms.ModelForm):
             }),
         }
 
+class GestionSolicitudForm(forms.ModelForm):
+    class Meta:
+        model = Solicitud
+        fields = ["estado", "pabellon"]
+        widgets = {
+            "estado": forms.Select(attrs={
+                "class": "form-select",
+            }),
+            "pabellon": forms.TextInput(attrs={
+                "class": "form-control",
+                "placeholder": "Ej.: Pabellón de Artesanías",
+            }),
+        }

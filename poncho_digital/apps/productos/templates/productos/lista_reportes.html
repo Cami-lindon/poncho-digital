@@ -17,32 +17,32 @@
             <li class="list-group-item">
                 <span>Artesanos registrados</span>
                 <div class="reportes-botones">
-                    <a href="#" class="btn btn-pdf">PDF</a>
-                    <a href="#" class="btn btn-excel">Excel</a>
+                    <a href="{% url 'reportes:reporte_artesanos_pdf' %}" class="btn btn-pdf">PDF</a>
+                    <a href="{% url 'reportes:reporte_artesanos_excel' %}" class="btn btn-excel">Excel</a>
                 </div>
             </li>
 
             <li class="list-group-item">
                 <span>Artesanos por localidad</span>
                 <div class="reportes-botones">
-                    <a href="#" class="btn btn-pdf">PDF</a>
-                    <a href="#" class="btn btn-excel">Excel</a>
+                    <a href="{% url 'reportes:reporte_artesanos_localidad_pdf' %}" class="btn btn-pdf">PDF</a>
+                    <a href="{% url 'reportes:reporte_artesanos_localidad_excel' %}" class="btn btn-excel">Excel</a>
                 </div>
             </li>
 
             <li class="list-group-item">
                 <span>Artesanos por rubro</span>
                 <div class="reportes-botones">
-                    <a href="#" class="btn btn-pdf">PDF</a>
-                    <a href="#" class="btn btn-excel">Excel</a>
+                    <a href="{% url 'reportes:reporte_artesanos_rubro_pdf' %}" class="btn btn-pdf">PDF</a>
+                    <a href="{% url 'reportes:reporte_artesanos_rubro_excel' %}" class="btn btn-excel">Excel</a>
                 </div>
             </li>
 
             <li class="list-group-item">
                 <span>Productos publicados por artesano</span>
                 <div class="reportes-botones">
-                    <a href="#" class="btn btn-pdf">PDF</a>
-                    <a href="#" class="btn btn-excel">Excel</a>
+                    <a href="{% url 'reportes:reporte_productos_por_artesano_pdf' %}" class="btn btn-pdf">PDF</a>
+                    <a href="{% url 'reportes:reporte_productos_por_artesano_excel' %}" class="btn btn-excel">Excel</a>
                 </div>
             </li>
 

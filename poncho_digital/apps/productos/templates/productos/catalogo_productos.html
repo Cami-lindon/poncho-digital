@@ -19,7 +19,7 @@
                     {% endif %}
                     <div class="card-body d-flex flex-column">
                             <h3 class="card-title">{{ producto.nombre }}</h3>
-                            <p class="card-text"><strong>Categoría: </strong>{{ producto.categoria }}</p>
+                            <p class="card-text"><strong>Categoría: </strong>{{ producto.get_categoria_display }}</p>
                             <p class="card-text"><strong>Descripción: </strong>{{ producto.descripcion }}</p>
                             <p class="card-text"><strong>Artesano: </strong>{{ producto.publicado_por.get_full_name|default:producto.publicado_por.username }}</p>
                              <div class="mt-auto">

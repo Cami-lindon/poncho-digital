@@ -6,6 +6,19 @@ from .models import Producto
 from .forms import ProductoForm
 from ..artesanos.models import Artesano
 
+#para reportes
+
+from io import BytesIO
+from xml.sax.saxutils import escape
+
+from django.db.models import Count
+from django.http import HttpResponse
+from openpyxl import Workbook
+from openpyxl.styles import Font
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 @login_required
 @permission_required("productos.view_producto", raise_exception=True)

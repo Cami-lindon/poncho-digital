@@ -1,7 +1,7 @@
 {% extends "base/base.html" %}
 {% load static %}
 {% block titulo %} Poncho Digital - Portada Principal {% endblock %}
-{% block css %} <link rel="stylesheet" href="../static/css/portada.css"> {% endblock %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/portada.css' %}"> {% endblock %}
 {% block contenido_principal %}
     <main class="container">
             <section>
@@ -70,10 +70,31 @@
                 </div>
             </section>
 
-            <section>
-                <h2 class="mb-2">Mapa del predio</h2>
-                <div class="card border-0 shadow-sm p-3">
-                    <img class="img-fluid rounded" src="{% static 'img/portada/mapa.jpg' %}" alt="mapa del predio ferial">
+            <section class="container">
+                <h2 class="mb-3">Mapa del predio</h2>
+                <div class="row g-4">
+                    <!--Mapa-->
+                    <div class="col-lg-10">
+                        <img class="img-fluid rounded" src="{% static 'img/portada/mapa-predio-poncho.png' %}" alt="mapa del predio ferial">
+                    </div>
+                    <!--Referencias-->
+                    <aside class="col-lg-2 referencias">
+                        <div class="border rounded p-3 bg-light">
+                            <h3 class="h4 mb-3" id="ubicacion">Ubicación de stands</h3>
+
+                            <div class="mb-3">
+                                <h4 class="h6 mb-0">- Pabellón de artesanos 1</h4>
+                                <p>Stands 1 al 300</p>
+                            </div>
+                            <div class="mb-3">
+                                <h4 class="h6 mb-0">-Pabellón de Artesanos 2</h4>
+                                <p>Stands 301 al 600</p>
+                            </div>
+                            <p class="small text-muted mb-0">
+                                Consultá el pabellón y el stand  de cada artesano en su perfil.
+                            </p>
+                        </div>
+                    </aside>
                 </div>
             </section>
     </main>

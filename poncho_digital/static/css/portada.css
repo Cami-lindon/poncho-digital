@@ -6,14 +6,8 @@
     --platinum: #f1f1f1ff;
 }
 
-h1 {
-    font-family: 'Lora', Georgia, serif;
-    background-color: #29324fff;
-    color: #dbcba0ff;
-    padding: 30px;
-    margin-bottom: 0;
-    text-align: center;
-    text-transform: uppercase;
+#ubicacion {
+    color: #734435ff;
 }
 
 h2 {
@@ -21,6 +15,10 @@ h2 {
 }
 
 h3 {
+    color: #29324fff;
+}
+
+h4.h6 {
     color: #29324fff;
 }
 
@@ -38,22 +36,16 @@ article:hover {
     color: #ffffff;
 }
 
-.navbar-celeste {
-    background-color: #b1bdddff;
-    padding:10px;
-    margin-bottom: 25px;
-}
-
-.navbar-celeste .nav-link {
-    color: #29324fff;
-}
-
-.navbar-celeste .nav-link:hover, .navbar-celeste .nav-link.active {
-    color: #734435ff;
-    font-weight: bold;
-}
-
 .carousel-item img {
     max-height: 500px;
     object-fit: cover;
 }
+
+aside.referencias  p {
+    font-size: 0.85rem;
+}
+
+aside.referencias h4 {
+    font-weight: 700;
+}
+

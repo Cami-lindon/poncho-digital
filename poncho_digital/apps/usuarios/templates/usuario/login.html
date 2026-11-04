@@ -1,5 +1,7 @@
 {% extends "base/base.html" %}
+{% load static %}
 {% block titulo %}Inicio Sesión{% endblock %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/portada.css' %}"> {% endblock %}
 {% block contenido_principal %}
     <header id="home">
         <h1>Login de Usuario</h1>

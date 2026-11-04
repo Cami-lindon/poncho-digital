@@ -9,33 +9,6 @@
     --platinum: #f1f1f1ff;
 }
 
-/* ===== Navegación y encabezado ===== */
-.navbar-celeste {
-    background-color: var(--powder-blue);
-    padding: 10px;
-    margin-bottom: 25px;
-}
-
-.navbar-celeste .nav-link {
-    color: var(--space-indigo);
-}
-
-.navbar-celeste .nav-link:hover,
-.navbar-celeste .nav-link.active {
-    color: var(--clay-soil);
-    font-weight: bold;
-}
-
-h1 {
-    font-family: 'Lora', Georgia, serif;
-    background-color: var(--space-indigo);
-    color: var(--pearl-beige);
-    padding: 30px;
-    margin-bottom: 0;
-    text-align: center;
-    text-transform: uppercase;
-}
-
 /* ===== Textos ===== */
 body {
     color: var(--space-indigo);

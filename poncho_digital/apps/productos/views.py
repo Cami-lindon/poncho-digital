@@ -7,6 +7,8 @@ from .forms import ProductoForm
 from ..artesanos.models import Artesano
 from apps.artesanos.models import Solicitud
 from django.contrib.admin.views.decorators import staff_member_required
+from django.db.models import Prefetch
+
 #para reportes
 
 from io import BytesIO
@@ -582,8 +584,25 @@ def obtener_productos_agrupados_por_artesano():
         Producto.objects
         .filter(
             publicado_por__artesano__isnull=False,
-            publicado_por__artesano__solicitudes__estado="aprobada")
-        .select_related("publicado_por","publicado_por__artesano","publicado_por__artesano__nombre","nombre")
+            publicado_por__artesano__solicitudes__estado="aprobada"
+        )
+        .select_related(
+            "publicado_por",
+            "publicado_por__artesano"
+        )
+        .prefetch_related(
+            Prefetch(
+                "publicado_por__artesano__solicitudes",
+                queryset=solicitudes_aprobadas,
+                to_attr="solicitudes_aprobadas"
+            )
+        )
+        .distinct()
+        .order_by(
+            "publicado_por__artesano__apellido",
+            "publicado_por__artesano__nombre",
+            "nombre"
+        )
     )
 
     grupos = {}
@@ -609,7 +628,6 @@ def obtener_productos_agrupados_por_artesano():
         grupos[artesano.id]["productos"].append(producto)
 
     return grupos.values()
-
 
 @staff_member_required
 def reporte_productos_por_artesano_pdf(request):

@@ -10,4 +10,8 @@ urlpatterns = [
         views.registro_artesano,
         name="registro_artesano",
     ),
+    path(
+        "panel/",
+         views.panel_solicitudes,
+         name="panel_solicitudes"),
 ]

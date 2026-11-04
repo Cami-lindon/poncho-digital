@@ -49,6 +49,15 @@ class ArtesanoForm(forms.ModelForm):
 
         return fecha
 
+    def save(self, commit=True):
+        artesano = super().save(commit=False)
+
+        if commit:
+            raise ValueError(
+                "El artesano debe vincularse a un usuario antes de guardarse."
+            )
+
+        return artesano
 
 
 class SolicitudForm(forms.ModelForm):
@@ -113,3 +122,4 @@ class SolicitudForm(forms.ModelForm):
                 "placeholder": "¿Hay algo más que quieras contarnos?",
             }),
         }
+

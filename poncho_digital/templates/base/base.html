@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'productos:catalogo_productos' %}">Productos</a>
                                 </li>
-                                <li  class="nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link" href="{% url 'artesanos:registro_artesano' %}">Registro de Artesanos</a>
                                 </li>
                                 {% if perms.productos.add_producto %}
@@ -43,6 +43,9 @@
                                 {% endif %}
 
                                 {% if request.user.is_authenticated and request.user.is_staff %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'artesanos:panel_solicitudes' %}">Panel de Solicitudes</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'reportes:lista_reportes' %}">Reportes</a>
                                 </li>
@@ -62,7 +65,7 @@
                     </div>
                 </nav>
         </header>
-                {% if messages %}
+        {% if messages %}
             {% for mensaje in messages %}
                 <div class="alert alert-warning">{{ mensaje }}</div>
             {% endfor %}

@@ -8,6 +8,11 @@
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(41, 50, 79, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.registro-card:hover {
+    transform: translateY(-3px);
 }
 
 .registro-etiqueta {
@@ -28,14 +33,6 @@
     color: #666666;
     max-width: 700px;
     margin: 0 auto;
-}
-
-.registro-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.registro-card:hover {
-    transform: translateY(-3px);
 }
 
 fieldset {
@@ -92,9 +89,22 @@ legend {
     transform: translateY(-2px);
 }
 
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.03rem;
+}
+
+/* Estilos mejorados para el Panel de Solicitudes */
+.table th {
+    color: var(--space-indigo);
+    font-weight: 700;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(177, 189, 221, 0.15);
+}
 
 @media (max-width: 767.98px) {
-
     .registro-card {
         padding: 1.25rem;
         border-radius: 14px;
@@ -112,10 +122,3 @@ legend {
         font-size: 0.95rem;
     }
 }
-
-
-.navbar-brand {
-    font-weight: 700;
-    letter-spacing: 0.03rem;
-}
-

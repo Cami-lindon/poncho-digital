@@ -97,7 +97,7 @@ def eliminar_producto(request, pk):
 
 
 def catalogo_productos(request):
-    productos = Producto.objects.all()
+    productos = Producto.objects.filter(publicado_por__artesano__solicitudes__estado="aprobada").distinct()
     return render(request, 'productos/catalogo_productos.html', {'productos': productos})
 
 

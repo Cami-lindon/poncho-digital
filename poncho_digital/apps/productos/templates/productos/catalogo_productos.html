@@ -21,7 +21,14 @@
                             <h3 class="card-title">{{ producto.nombre }}</h3>
                             <p class="card-text"><strong>Categoría: </strong>{{ producto.get_categoria_display }}</p>
                             <p class="card-text"><strong>Descripción: </strong>{{ producto.descripcion }}</p>
-                            <p class="card-text"><strong>Artesano: </strong>{{ producto.publicado_por.get_full_name|default:producto.publicado_por.username }}</p>
+                            <p class="card-text"><strong>Artesano: </strong>
+                                {% if producto.publicado_por.artesano %}
+                                    {{ producto.publicado_por.artesano.nombre }}
+                                    {{ producto.publicado_por.artesano.apellido }}
+                                {% else %}
+                                    {{ producto.publicado_por.username }}
+                                {% endif %}
+                            </p>
                              <div class="mt-auto">
                                  <a href="{% url 'productos:detalle_artesano' producto.publicado_por_id %}" class="btn btn-primary">Ver Artesano</a>
                              </div>

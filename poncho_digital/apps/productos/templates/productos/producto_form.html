@@ -1,12 +1,13 @@
 {% extends "base/base.html" %}
 {% load static %}
+
 {% block titulo %}
     {% if producto %}Modificar producto{% else %}Agregar producto{% endif %}
 {% endblock %}
 
-    {% block css %}
-    <link rel="stylesheet" href="{% static 'css/productos.css' %}">
-    {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/productos.css' %}">
+{% endblock %}
 
 {% block contenido_principal %}
 <section class="container my-4">
@@ -16,14 +17,18 @@
 <section class="container mb-5">
     <div class="card shadow-sm border-0">
         <div class="card-body p-4">
-            <h3 class="mb-3">{% if producto %}Modificar producto{% else %}Agregar producto{% endif %}</h3>
+            <h3 class="mb-3">
+                {% if producto %}Modificar producto{% else %}Agregar producto{% endif %}
+            </h3>
 
-            <form method="post" enctype="multipart/form-data" class="row g-3">
+            <form method="post" enctype="multipart/form-data" class="row g-3" novalidate>
                 {% csrf_token %}
 
                 {% if formulario.non_field_errors %}
                     <div class="col-12">
-                        <div class="alert alert-danger">{{ formulario.non_field_errors }}</div>
+                        <div class="alert alert-danger">
+                            {{ formulario.non_field_errors }}
+                        </div>
                     </div>
                 {% endif %}
 
@@ -31,22 +36,41 @@
                     <legend class="mb-3">Datos del producto</legend>
 
                     <div class="row g-3">
+
                         <div class="col-12">
-                            <label for="{{ formulario.nombre.id_for_label }}" class="form-label">Nombre del producto</label>
+                            <label for="{{ formulario.nombre.id_for_label }}" class="form-label">
+                                Nombre del producto
+                            </label>
+
                             {{ formulario.nombre }}
-                            {{ formulario.nombre.errors }}
+
+                            {% for error in formulario.nombre.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
                         </div>
 
                         <div class="col-md-6">
-                            <label for="{{ formulario.categoria.id_for_label }}" class="form-label">Categoría</label>
+                            <label for="{{ formulario.categoria.id_for_label }}" class="form-label">
+                                Categoría
+                            </label>
+
                             {{ formulario.categoria }}
-                            {{ formulario.categoria.errors }}
+
+                            {% for error in formulario.categoria.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
                         </div>
 
                         <div class="col-12">
-                            <label for="{{ formulario.descripcion.id_for_label }}" class="form-label">Descripción</label>
+                            <label for="{{ formulario.descripcion.id_for_label }}" class="form-label">
+                                Descripción
+                            </label>
+
                             {{ formulario.descripcion }}
-                            {{ formulario.descripcion.errors }}
+
+                            {% for error in formulario.descripcion.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
                         </div>
 
                     </div>
@@ -57,11 +81,20 @@
 
                     <div class="row g-3">
                         <div class="col-12">
+
                             {% if producto.imagen_principal %}
-                                <img src="{{ producto.imagen_principal.url }}" alt="Imagen actual" class="img-thumbnail mb-2" style="max-height: 100px;">
+                                <img src="{{ producto.imagen_principal.url }}"
+                                     alt="Imagen actual"
+                                     class="img-thumbnail mb-2"
+                                     style="max-height: 100px;">
                             {% endif %}
+
                             {{ formulario.imagen_principal }}
-                            {{ formulario.imagen_principal.errors }}
+
+                            {% for error in formulario.imagen_principal.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+
                         </div>
                     </div>
                 </fieldset>
@@ -72,9 +105,13 @@
                     </button>
 
                     {% if producto %}
-                        <a href="{% url 'productos:detalle_producto' producto.pk %}" class="btn btn-secondary">Cancelar edición</a>
+                        <a href="{% url 'productos:detalle_producto' producto.pk %}" class="btn btn-secondary">
+                            Cancelar edición
+                        </a>
                     {% else %}
-                        <a href="{% url 'productos:lista_productos' %}" class="btn btn-secondary">Cancelar</a>
+                        <a href="{% url 'productos:lista_productos' %}" class="btn btn-secondary">
+                            Cancelar
+                        </a>
                     {% endif %}
                 </div>
             </form>

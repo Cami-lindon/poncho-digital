@@ -5,8 +5,8 @@ Ramiro Exequiel Seco  MU:01797
 Morales Sofía         MU:01897
 
 Docentes:
-Mgtr. Cecilia E. Gallardo
-Esp. Marta del V. Miranda
+-Mgtr. Cecilia E. Gallardo
+-Esp. Marta del V. Miranda
 
 Carrera: Ingeniería en Informática
 

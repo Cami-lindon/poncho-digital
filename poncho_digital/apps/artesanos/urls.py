@@ -1,0 +1,22 @@
+from django.urls import path
+from . import views
+
+app_name = "artesanos"
+
+urlpatterns = [
+    path(
+        "registro/",
+        views.registro_artesano,
+        name="registro_artesano",
+    ),
+    path(
+        "panel/",
+        views.panel_solicitudes,
+        name="panel_solicitudes",
+    ),
+    path(
+        "panel/solicitud/<int:pk>/",
+        views.detalle_solicitud,
+        name="detalle_solicitud",
+    ),
+]

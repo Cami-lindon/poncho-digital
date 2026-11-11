@@ -1,0 +1,106 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block titulo %}
+Panel de solicitudes - Fiesta del Poncho
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/artesanos.css' %}">
+{% endblock %}
+
+{% block contenido_principal %}
+
+<div class="container my-5">
+    <div class="registro-card">
+
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+                <p class="registro-etiqueta mb-1">ADMINISTRACIÓN</p>
+                <h2 class="registro-titulo mb-0">Panel de Solicitudes de Artesanos</h2>
+            </div>
+            <span class="badge bg-secondary p-2 fs-6">
+                Total: {{ solicitudes|length }}
+            </span>
+        </div>
+
+        {% if solicitudes %}
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Artesano</th>
+                            <th>Emprendimiento</th>
+                            <th>Rubro</th>
+                            <th>Estado</th>
+                            <th>Pabellón</th>
+                            <th class="text-end">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for solicitud in solicitudes %}
+                            <tr>
+                                <td class="fw-semibold">
+                                    {{ solicitud.artesano.nombre }} {{ solicitud.artesano.apellido }}
+                                </td>
+
+                                <td>
+                                    <span class="d-block text-truncate" style="max-width: 200px;">
+                                        {{ solicitud.emprendimiento }}
+                                    </span>
+                                </td>
+
+                                <td>{{ solicitud.rubro }}</td>
+
+                                <td>
+                                    {% if solicitud.estado == "aprobada" %}
+                                        <span class="badge bg-success-subtle text-success border border-success px-2 py-1">
+                                            Aprobada
+                                        </span>
+                                    {% elif solicitud.estado == "pendiente" %}
+                                        <span class="badge bg-warning-subtle text-warning-emphasis border border-warning px-2 py-1">
+                                            Pendiente
+                                        </span>
+                                    {% elif solicitud.estado == "rechazada" %}
+                                        <span class="badge bg-danger-subtle text-danger border border-danger px-2 py-1">
+                                            Rechazada
+                                        </span>
+                                    {% else %}
+                                        <span class="badge bg-info-subtle text-info-emphasis border border-info px-2 py-1">
+                                            {{ solicitud.get_estado_display }}
+                                        </span>
+                                    {% endif %}
+                                </td>
+
+                                <td>
+                                    {% if solicitud.pabellon %}
+                                        <span class="badge bg-light text-dark border">
+                                            {{ solicitud.pabellon }}
+                                        </span>
+                                    {% else %}
+                                        <span class="text-muted fst-italic">Sin asignar</span>
+                                    {% endif %}
+                                </td>
+
+                                <td class="text-end">
+                                    <a href="{% url 'artesanos:detalle_solicitud' solicitud.pk %}"
+                                       class="btn btn-sm btn-outline-primary px-3">
+                                        Gestionar
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        {% else %}
+            <div class="alert alert-info mb-0" role="alert">
+                Todavía no hay solicitudes registradas.
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

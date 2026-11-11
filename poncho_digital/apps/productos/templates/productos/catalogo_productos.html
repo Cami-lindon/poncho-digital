@@ -1,0 +1,45 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/productos.css' %}">
+{% endblock %}
+{% block titulo %}Catalogo de productos{% endblock %}
+
+{% block contenido_principal %}
+    <header>
+        <h2 class="ms-4">Catalogo de Productos</h2>
+    </header>
+    <section id="catalogo-productos" class="container my-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for producto in productos %}
+                <div class="col">
+                <article class="card h-100">
+                    {% if producto.imagen_principal %}
+                        <img src="{{ producto.imagen_principal.url }}" class="card-img-top catalogo-imagen" alt="{{ producto.nombre }}">
+                    {% endif %}
+                    <div class="card-body d-flex flex-column">
+                            <h3 class="card-title">{{ producto.nombre }}</h3>
+                            <p class="card-text"><strong>Categoría: </strong>{{ producto.get_categoria_display }}</p>
+                            <p class="card-text"><strong>Descripción: </strong>{{ producto.descripcion }}</p>
+                            <p class="card-text"><strong>Artesano: </strong>
+                                {% if producto.publicado_por.artesano %}
+                                    {{ producto.publicado_por.artesano.nombre }}
+                                    {{ producto.publicado_por.artesano.apellido }}
+                                {% else %}
+                                    {{ producto.publicado_por.username }}
+                                {% endif %}
+                            </p>
+                             <div class="mt-auto">
+                                 <a href="{% url 'productos:detalle_artesano' producto.publicado_por_id %}" class="btn btn-primary">Ver Artesano</a>
+                             </div>
+                    </div>
+                </article>
+            </div>
+            {% empty %}
+            <div class="col">
+                <p>No hay productos publicados.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

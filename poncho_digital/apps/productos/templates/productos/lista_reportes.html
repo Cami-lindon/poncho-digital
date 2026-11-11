@@ -1,0 +1,52 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/productos.css' %}">
+{% endblock %}
+{% block titulo %}
+    Reportes
+{% endblock %}
+
+{% block contenido_principal %}
+<div class="container py-5">
+    <div class="reportes-card mx-auto">
+        <h1 class="reportes-titulo mb-4">Reportes</h1>
+
+        <ul class="list-group reportes-lista">
+
+            <li class="list-group-item">
+                <span>Artesanos registrados</span>
+                <div class="reportes-botones">
+                    <a href="{% url 'reportes:reporte_artesanos_pdf' %}" class="btn btn-pdf">PDF</a>
+                    <a href="{% url 'reportes:reporte_artesanos_excel' %}" class="btn btn-excel">Excel</a>
+                </div>
+            </li>
+
+            <li class="list-group-item">
+                <span>Artesanos por localidad</span>
+                <div class="reportes-botones">
+                    <a href="{% url 'reportes:reporte_artesanos_localidad_pdf' %}" class="btn btn-pdf">PDF</a>
+                    <a href="{% url 'reportes:reporte_artesanos_localidad_excel' %}" class="btn btn-excel">Excel</a>
+                </div>
+            </li>
+
+            <li class="list-group-item">
+                <span>Artesanos por rubro</span>
+                <div class="reportes-botones">
+                    <a href="{% url 'reportes:reporte_artesanos_rubro_pdf' %}" class="btn btn-pdf">PDF</a>
+                    <a href="{% url 'reportes:reporte_artesanos_rubro_excel' %}" class="btn btn-excel">Excel</a>
+                </div>
+            </li>
+
+            <li class="list-group-item">
+                <span>Productos publicados por artesano</span>
+                <div class="reportes-botones">
+                    <a href="{% url 'reportes:reporte_productos_por_artesano_pdf' %}" class="btn btn-pdf">PDF</a>
+                    <a href="{% url 'reportes:reporte_productos_por_artesano_excel' %}" class="btn btn-excel">Excel</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+{% endblock %}

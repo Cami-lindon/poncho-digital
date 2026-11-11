@@ -1,0 +1,79 @@
+{% extends "base/base.html" %}
+
+{% block titulo %}Detalle de solicitud - Fiesta del Poncho{% endblock %}
+
+{% block contenido_principal %}
+<div class="container mt-4 mb-5">
+
+    <h1 class="mb-4">Detalle de solicitud</h1>
+
+    <!-- Datos del artesano -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header">
+            <h4>Datos del artesano</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Nombre:</strong> {{ solicitud.artesano.nombre }} {{ solicitud.artesano.apellido }}</p>
+            <p><strong>DNI:</strong> {{ solicitud.artesano.dni }}</p>
+            <p><strong>Fecha de nacimiento:</strong> {{ solicitud.artesano.fecha_nacimiento }}</p>
+        </div>
+    </div>
+
+    <!-- Datos del emprendimiento -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header">
+            <h4>Datos del emprendimiento</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Emprendimiento:</strong> {{ solicitud.emprendimiento }}</p>
+            <p><strong>Email:</strong> {{ solicitud.email }}</p>
+            <p><strong>Teléfono:</strong> {{ solicitud.telefono }}</p>
+            <p><strong>Provincia:</strong> {{ solicitud.provincia }}</p>
+            <p><strong>Localidad:</strong> {{ solicitud.localidad }}</p>
+            <p><strong>Rubro:</strong> {{ solicitud.rubro }}</p>
+            <p><strong>Descripción:</strong> {{ solicitud.descripcion }}</p>
+            <p><strong>Productos:</strong> {{ solicitud.productos }}</p>
+            <p><strong>Variedad:</strong> {{ solicitud.variedad|default:"No especificada" }}</p>
+            <p><strong>Observaciones:</strong> {{ solicitud.observaciones|default:"Sin observaciones" }}</p>
+        </div>
+    </div>
+
+    <!-- Gestión de la solicitud -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header">
+            <h4>Gestionar solicitud</h4>
+        </div>
+
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label class="form-label">Estado de la solicitud</label>
+                    {{ formulario.estado }}
+                    {% for error in formulario.estado.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Pabellón asignado</label>
+                    {{ formulario.pabellon }}
+                    {% for error in formulario.pabellon.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Guardar cambios
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <a href="{% url 'artesanos:panel_solicitudes' %}" class="btn btn-secondary">
+        Volver al panel
+    </a>
+
+</div>
+{% endblock %}

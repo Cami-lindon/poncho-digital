@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/productos.css' %}">
+{% endblock %}
+{% block titulo %}Detalle de Artesano{% endblock %}
+
+{% block contenido_principal %}
+<section class="container my-4">
+    <article class="card detalle-artesano shadow-sm">
+        <div class="card-header">
+            <h2 class="detalle-artesano-titulo">{{ solicitud.emprendimiento }}</h2>
+            <p class="detalle-artesano-nombre">{{ artesano.nombre }} {{ artesano.apellido }}</p>
+        </div>
+        <div class="card-body">
+            <p>{{ solicitud.descripcion }}</p>
+            <p><strong>Provincia: </strong> {{ solicitud.provincia }}</p>
+            <p><strong>Localidad: </strong> {{ solicitud.localidad }}</p>
+            <p><strong>Rubro: </strong> {{ solicitud.rubro }}</p>
+            <p><strong>Productos: </strong> {{ solicitud.productos }}</p>
+            <p><Strong>Ubicación: </Strong>{{ solicitud.pabellon }}</p>
+        </div>
+    </article>
+</section>
+{% endblock %}
